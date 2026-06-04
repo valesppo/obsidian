@@ -1,0 +1,10 @@
+/* Ajustar el ancho de la línea en el editor y modo lectura */
+body {
+    --file-line-width: 100%; /* Puedes cambiar esto a 100%, 80%, o medidas fijas como 1200px */
+}
+
+/* Opcional: Reducir el padding (espacio interno) lateral de la ventana */
+.workspace-leaf-content {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
