@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teorico ayed/TEORICO segundo parcial ayed.md",
+                "file": "Ejercicios/PRIMER PARCIAL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEORICO segundo parcial ayed"
+              "title": "PRIMER PARCIAL"
             }
           }
         ]
@@ -198,8 +198,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 574.5,
-    "collapsed": true
+    "width": 574.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,14 +214,16 @@
   },
   "active": "302156c0e55c4e03",
   "lastOpenFiles": [
-    "Ejercicios/repaso.md",
+    "Ejercicios/Pasted image 20260603115937.png",
+    "Ejercicios/PRIMER PARCIAL.md",
     "Ejercicios/variaciones.md",
-    "Ejercicios/GRAFOS.md",
+    "Teorico ayed/Sin título.md",
     "Teorico ayed/TEORICO segundo parcial ayed.md",
-    "Pasted image 20260603131903.png",
-    "Pasted image 20260603115959.png",
-    "Pasted image 20260603115952.png",
-    "Pasted image 20260603115937.png",
+    "Ejercicios/repaso.md",
+    "Ejercicios/GRAFOS.md",
+    "Ejercicios/Pasted image 20260603131903.png",
+    "Ejercicios/Pasted image 20260603115959.png",
+    "Ejercicios/Pasted image 20260603115952.png",
     "Ejercicios/RECURSION.md",
     "Ejercicios/ABB - arboles (del aula virtual).md",
     "youtube/videos de mi vida.md",
@@ -253,10 +254,7 @@
     "copilot/copilot-custom-prompts/Emojify.md",
     "copilot/copilot-custom-prompts/Explain like I am 5.md",
     "copilot/copilot-custom-prompts/Simplify.md",
-    "copilot/copilot-custom-prompts/Summarize.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
     "copilot/copilot-custom-prompts",
-    "2026-05-22.md",
     "Sin título.canvas",
     "Ejercicios",
     "ejercicios",
