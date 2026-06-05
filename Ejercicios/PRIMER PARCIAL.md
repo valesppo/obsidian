@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ejercicio 1 QUEUE PALINDROMO
 
 ```
@@ -106,3 +107,7 @@ mantener correctos los punteros prev y next de todos los nodos sobrevivientes, i
 actualizar m_size correctamente
 
 ```
+=======
+nose todavia que escribir aca, pero tengo que conseguir el primer parcial
+aksdjalksjss
+>>>>>>> origin/main
