@@ -20,6 +20,20 @@
               "icon": "lucide-file",
               "title": "PRIMER PARCIAL"
             }
+          },
+          {
+            "id": "5c6d0a517de03ad1",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://gemini.google.com/app/7d3fa80769f34302",
+                "title": "Implementación de Estructuras de Datos y Algoritmos - Google Gemini",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Implementación de Estructuras de Datos y Algoritmos - Google Gemini"
+            }
           }
         ]
       }
@@ -214,16 +228,20 @@
   },
   "active": "302156c0e55c4e03",
   "lastOpenFiles": [
-    "Ejercicios/PRIMER PARCIAL.md",
-    "conflict-files-obsidian-git.md",
     "README.md",
+    "Ejercicios/PRIMER PARCIAL.md",
+    "imagenes/Pasted image 20260608183659.png",
+    "imagenes/Pasted image 20260608182406.png",
+    "imagenes/Pasted image 20260608181723.png",
+    "Sin título.md",
+    "Ejercicios/GRAFOS.md",
+    "Ejercicios/variaciones.md",
+    "Ejercicios/repaso.md",
+    "conflict-files-obsidian-git.md",
     "imagenes",
     "imagenes/Pasted image 20260603115937.png",
-    "Ejercicios/variaciones.md",
     "Teorico ayed/Sin título.md",
     "Teorico ayed/TEORICO segundo parcial ayed.md",
-    "Ejercicios/repaso.md",
-    "Ejercicios/GRAFOS.md",
     "imagenes/Pasted image 20260603131903.png",
     "imagenes/Pasted image 20260603115959.png",
     "imagenes/Pasted image 20260603115952.png",
@@ -234,9 +252,6 @@
     "imagenes/Pasted image 20260525205953.png",
     "imagenes/Pasted image 20260525201700.png",
     "imagenes/Pasted image 20260525170000.png",
-    "imagenes/Pasted image 20260524205109.png",
-    "imagenes/Pasted image 20260524193128.png",
-    "imagenes/Pasted image 20260524193955.png",
     "2026-06-03 PARCIAL DE AYED.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175917.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md",
@@ -253,8 +268,6 @@
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts/Generate table of contents.md",
-    "copilot/copilot-custom-prompts/Emojify.md",
-    "copilot/copilot-custom-prompts/Explain like I am 5.md",
     "copilot/copilot-custom-prompts",
     "Sin título.canvas",
     "Ejercicios",

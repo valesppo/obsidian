@@ -1,4 +1,4 @@
- 
+ [[GRAFOS]]
 # DIJKSTRA
 
 **Variante B: Devolver EL CAMINO (Ruta de Nodos)** Si no te piden el costo, sino el recorrido físico (Ej: `0 -> 3 -> 5`). Acá no devolvés un `int`, devolvés modificando un arreglo `int previo[]` pasado por parámetro.

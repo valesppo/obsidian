@@ -1,3 +1,6 @@
+[[GRAFOS]]
+
+
 ```
 Una brigada debe llegar a una estación dañada atravesando únicamente estaciones habilitadas. El sistema no necesita saber la cantidad de transbordos, solo si existe al menos una ruta segura.
 

@@ -91,8 +91,28 @@ original: top -> [1,2,3,4,5] (1 es el nuevo tope)
 
 ```
 
-
-
+	private:
+	void invertirAux(Node* current, Stack<TData>& result) const{
+		if(current == nullptr){
+			return;
+		}
+		result.push(current->data);
+		invertirAux(current->next,result);
+	}
+	
+	public:
+	Stack<TData> invertir() const {
+		Stack<TData> result;
+		invertirAux(m_top,result);
+	}
+	// iterativo
+		Stack<TData> result;
+		auto current = m_top;
+		while(current != nullptr){
+			result.push(current->data);
+			current = current->next;
+		}
+		return = result;
 
 
 # EJERCICIO 3 Lista doblemente enlazada: eliminacion de duplicados consecutivos
@@ -108,3 +128,102 @@ actualizar m_size correctamente
 
 ```
 
+
+
+# OTROS EJERCICIOS
+
+![[Pasted image 20260608181723.png|325]]
+
+```
+// P3 - IMPLEMENTAR AQUÍ
+    void moverBloqueInicialAlFinal() {
+        // 1. Casos base: lista vacía o con un solo elemento.
+        if (m_head == nullptr || m_head == m_tail) {
+            return; 
+        }
+
+        // 2. Identificar el final del bloque maximal inicial.
+        Node* blockEnd = m_head;
+        while (blockEnd->next != nullptr && blockEnd->next->data == m_head->data) {
+            blockEnd = blockEnd->next;
+        }
+
+        // 3. Si el bloque abarca toda la lista, no hay nada que mover.
+        if (blockEnd == m_tail) {
+            return;
+        }
+
+        // 4. Guardar referencias a los nodos clave para el empalme (splicing).
+        Node* oldHead = m_head;
+        Node* newHead = blockEnd->next;
+        Node* oldTail = m_tail;
+
+        // 5. Re-enlazar (Pointer Splicing)
+        // a. Configurar el nuevo inicio de la lista
+        newHead->prev = nullptr;
+        m_head = newHead;
+
+        // b. Conectar el bloque extraído al final de la lista original
+        oldTail->next = oldHead;
+        oldHead->prev = oldTail;
+
+        // c. Cerrar el nuevo final de la lista
+        blockEnd->next = nullptr;
+        m_tail = blockEnd;
+
+        // Nota: m_size no se modifica porque no se crean ni destruyen nodos.
+    }
+```
+
+![[Pasted image 20260608182406.png|385]]
+
+```
+// IMPLEMENTAR AQUÍ
+    void intercambiarMitades() {
+        // 1. Si la pila está vacía (o tiene 0 elementos, aunque el enunciado 
+        // garantiza cantidad par), no hay nada que hacer.
+        if (isEmpty()) return;
+
+        std::size_t n = size();
+        std::size_t mitad = n / 2;
+
+        // Se permiten stacks auxiliares para retener los datos temporalmente
+        Stack<TData> mitadSuperior;
+        Stack<TData> mitadInferior;
+
+        // 2. Extraer la primera mitad (la que está en el tope original)
+        for (std::size_t i = 0; i < mitad; ++i) {
+            mitadSuperior.push(top());
+            pop();
+        }
+
+        // 3. Extraer la segunda mitad (el fondo original)
+        for (std::size_t i = 0; i < mitad; ++i) {
+            mitadInferior.push(top());
+            pop();
+        }
+
+        // En este punto, la pila original quedó vacía.
+        
+        // 4. Insertar primero la mitad que antes estaba arriba. 
+        // Como las pilas invierten el orden natural, al pasarlo de la 
+        // pila auxiliar a la original, el orden interno se restaura mágicamente.
+        while (!mitadSuperior.isEmpty()) {
+            push(mitadSuperior.top());
+            mitadSuperior.pop();
+        }
+
+        // 5. Insertar la mitad que antes estaba en el fondo.
+        // Quedará posicionada en el nuevo tope, conservando su orden.
+        while (!mitadInferior.isEmpty()) {
+            push(mitadInferior.top());
+            mitadInferior.pop();
+        }
+    }
+```
+
+![[Pasted image 20260608183659.png|399]]
+
+```
+
+```
