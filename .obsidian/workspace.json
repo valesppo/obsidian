@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "302156c0e55c4e03",
+            "id": "ee002603bedb87fe",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ejercicios/PRIMER PARCIAL.md",
+                "file": "Avanzada/Teorico.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PRIMER PARCIAL"
-            }
-          },
-          {
-            "id": "5c6d0a517de03ad1",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://gemini.google.com/app/7d3fa80769f34302",
-                "title": "Implementación de Estructuras de Datos y Algoritmos - Google Gemini",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Implementación de Estructuras de Datos y Algoritmos - Google Gemini"
+              "title": "Teorico"
             }
           }
         ]
@@ -223,42 +209,47 @@
       "templates:Insertar plantilla": false,
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "302156c0e55c4e03",
+  "active": "ee002603bedb87fe",
   "lastOpenFiles": [
+    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
+    "Avanzada/Teorico.md",
     "README.md",
-    "Ejercicios/PRIMER PARCIAL.md",
-    "imagenes/Pasted image 20260608183659.png",
-    "imagenes/Pasted image 20260608182406.png",
-    "imagenes/Pasted image 20260608181723.png",
-    "Sin título.md",
-    "Ejercicios/GRAFOS.md",
-    "Ejercicios/variaciones.md",
-    "Ejercicios/repaso.md",
+    "Sin título.base",
+    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "Avanzada",
+    "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
+    "ALGORITMOS",
+    "ALGORITMOS/imagenes/Pasted image 20260608183659.png",
+    "ALGORITMOS/imagenes/Pasted image 20260608182406.png",
+    "ALGORITMOS/imagenes/Pasted image 20260608181723.png",
+    "ALGORITMOS/Ejercicios/GRAFOS.md",
+    "ALGORITMOS/Ejercicios/variaciones.md",
+    "ALGORITMOS/Ejercicios/repaso.md",
     "conflict-files-obsidian-git.md",
-    "imagenes",
-    "imagenes/Pasted image 20260603115937.png",
+    "ALGORITMOS/imagenes",
+    "ALGORITMOS/imagenes/Pasted image 20260603115937.png",
     "Teorico ayed/Sin título.md",
-    "Teorico ayed/TEORICO segundo parcial ayed.md",
-    "imagenes/Pasted image 20260603131903.png",
-    "imagenes/Pasted image 20260603115959.png",
-    "imagenes/Pasted image 20260603115952.png",
-    "Ejercicios/RECURSION.md",
-    "Ejercicios/ABB - arboles (del aula virtual).md",
+    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
+    "ALGORITMOS/imagenes/Pasted image 20260603131903.png",
+    "ALGORITMOS/imagenes/Pasted image 20260603115959.png",
+    "ALGORITMOS/imagenes/Pasted image 20260603115952.png",
+    "ALGORITMOS/Ejercicios/RECURSION.md",
     "youtube/videos de mi vida.md",
     "youtube",
-    "imagenes/Pasted image 20260525205953.png",
-    "imagenes/Pasted image 20260525201700.png",
-    "imagenes/Pasted image 20260525170000.png",
+    "ALGORITMOS/imagenes/Pasted image 20260525205953.png",
+    "ALGORITMOS/imagenes/Pasted image 20260525201700.png",
+    "ALGORITMOS/imagenes/Pasted image 20260525170000.png",
     "2026-06-03 PARCIAL DE AYED.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175917.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md",
     "copilot/copilot-conversations",
     "copilot",
     "copilot/copilot-custom-prompts/Make longer.md",
-    "Sin título.base",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
@@ -267,12 +258,9 @@
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
     "copilot/copilot-custom-prompts/Generate glossary.md",
-    "copilot/copilot-custom-prompts/Generate table of contents.md",
     "copilot/copilot-custom-prompts",
     "Sin título.canvas",
-    "Ejercicios",
-    "ejercicios",
-    "ultimaclase_ayed.pptx",
-    "slides.pptx"
+    "ALGORITMOS/Ejercicios",
+    "ejercicios"
   ]
 }
