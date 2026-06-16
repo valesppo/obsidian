@@ -4,18 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "9e025297a9c4d76a",
+        "id": "a68cb0126b8f6f6e",
         "type": "tabs",
         "children": [
           {
-            "id": "ee002603bedb87fe",
+            "id": "d9bcfbbcaa2cea6b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Avanzada/Teorico.md",
                 "mode": "source",
-                "source": false
+                "source": false,
+                "backlinks": false
               },
               "icon": "lucide-file",
               "title": "Teorico"
@@ -96,7 +97,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 225.5
+    "width": 224.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -213,28 +214,30 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "ee002603bedb87fe",
+  "active": "d9bcfbbcaa2cea6b",
   "lastOpenFiles": [
-    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
+    "resumen de avanzada con claude.pdf",
     "Avanzada/Teorico.md",
+    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
+    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/GRAFOS.md",
+    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
+    "Resumen de clase avanzada.pdf",
     "README.md",
     "Sin título.base",
-    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "Avanzada",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
-    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
     "ALGORITMOS",
     "ALGORITMOS/imagenes/Pasted image 20260608183659.png",
     "ALGORITMOS/imagenes/Pasted image 20260608182406.png",
     "ALGORITMOS/imagenes/Pasted image 20260608181723.png",
-    "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/variaciones.md",
     "ALGORITMOS/Ejercicios/repaso.md",
     "conflict-files-obsidian-git.md",
     "ALGORITMOS/imagenes",
     "ALGORITMOS/imagenes/Pasted image 20260603115937.png",
     "Teorico ayed/Sin título.md",
-    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/imagenes/Pasted image 20260603131903.png",
     "ALGORITMOS/imagenes/Pasted image 20260603115959.png",
     "ALGORITMOS/imagenes/Pasted image 20260603115952.png",
@@ -257,10 +260,7 @@
     "copilot/copilot-custom-prompts/Remove URLs.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts",
-    "Sin título.canvas",
-    "ALGORITMOS/Ejercicios",
-    "ejercicios"
+    "Sin título.canvas"
   ]
 }
