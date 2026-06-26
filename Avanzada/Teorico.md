@@ -144,4 +144,88 @@ public class Main {
 }    
 ```
 
-clave del BNA 1598
+==**Interfaces:**==
+
+Una interfaz Java contiene **una colección de métodos abstractos y propiedades constantes que permiten activar la herencia múltiple**, es decir, que diferentes clases partan de la misma estructura. 
+
+Los métodos, los cuales deberán ser siempre públicos (_public_), no se implementan en la propia interfaz, sino que tan solo se declaran. Sin embargo, **las clases que hereden la interfaz serán las encargadas de implementarla**. 
+
+En este sentido, una interfaz de Java presenta las siguientes **características**:
+
+- Puede contener **encabezados de métodos y constantes públicas**, nunca implementaciones.
+- La **clase** no puede ser instanciada, tan solo **implementada por una clase**.
+- **No se puede extender**.
+- Las **interfaces pueden implementar otras interfaces**.
+- Una **clase** puede implementar **varias interfaces**.
+- Se pueden declarar **métodos estáticos (_Static_)**.
+
+```
+// 1. La Interfaz (el contrato)
+public interface Datos {
+     void reporte();
+}
+
+// 2. Las clases firman el contrato
+public class Auto extends Vehiculo implements Datos {
+   @Override
+   public void reporte() {
+       System.out.println("Auto enviando nivel de combustible y ubicación...");
+   }
+}
+
+public class Semaforo extends Infraestructura implements Datos {
+   @Override
+   public void reporte() {
+       System.out.println("Semáforo en verde, tráfico fluido.");
+   }
+}
+
+// 3. El Servidor Central (Polimorfismo en acción)
+public class ServidorCentral {
+    public static void main(String[] args) {
+        // Un ArrayList polimórfico
+        ArrayList<Datos> redDeLaCiudad = new ArrayList<>();
+        
+        redDeLaCiudad.add(new Auto());
+        redDeLaCiudad.add(new Semaforo());
+
+        // Recorremos la lista sin importar qué objeto sea
+        for (Datos dispositivo : redDeLaCiudad) {
+            dispositivo.reporte(); // Cada uno sabe cómo reportarse
+        }
+    }
+}
+
+```
+
+### 1. La anatomía de las Cajas (Las Clases)
+
+Cada rectángulo representa una clase (o un enum/interfaz) y siempre está dividido en tres pisos:
+
+- **El Techo (Nombre):** Arriba de todo va el nombre de la clase (ej. `Vehiculo` o `Transportes`). Si ves que dice algo entre comillas angulares como `<<enum>>` o `<<interface>>`, te está avisando que no es una clase normal, sino un tipo especial. En tu diagrama, `Tipo` es un enum.
+    
+- **El Medio (Atributos/Variables):** Acá va el estado interno.
+    
+- **El Piso de Abajo (Métodos/Funciones):** Acá van las acciones que puede hacer esa clase.
+    
+
+**Los signitos de más y menos (+ y -):** Esto es clave para la encapsulación en Java:
+
+- El **`-` (Menos)** significa **`private`**. Solo la clase puede usarlo. Por ejemplo, en `Vehiculo`, `-Tipo medio` significa que la variable `medio` es privada.
+    
+- El **`+` (Más)** significa **`public`**. Cualquiera puede usarlo. Por ejemplo, `+Tipo getMedio()` es un método público.
+    
+
+### 2. Las Flechas (Las Relaciones)
+
+Esta es la parte más importante para saber qué código escribir. Hay distintos tipos de líneas y puntas de flecha:
+
+- **Línea continua con un TRIÁNGULO BLANCO hueco en la punta (Herencia / `extends`):** Esta es la flecha de la relación "Es un...". **La flecha siempre sale del Hijo y apunta al Padre.** _Ejemplo en tu diagrama:_ `Acuatico`, `Terrestre` y `Aereo` tienen una flecha con triángulo blanco que apunta a `Vehiculo`. Eso en Java se traduce automáticamente a: `public class Acuatico extends Vehiculo { }`. A su vez, `Canoa` y `Barco` apuntan a `Acuatico`, o sea que heredan de él.
+    
+- **Línea punteada con TRIÁNGULO BLANCO hueco (Implementación / `implements`):** _No está en este diagrama exacto, pero estaba en el de tu tienda anterior._ Es lo mismo que la herencia, pero se usa cuando una clase firma el contrato de una `<<interface>>`.
+    
+- **Línea continua con una FLECHA COMÚN abierta (Asociación / "Tiene un..."):** Significa que una clase conoce a la otra, generalmente porque la tiene guardada en una variable. _Ejemplo en tu diagrama:_ La clase `Transportes` tiene una flecha común que apunta a `Vehiculo`. Y si mirás la caja de `Transportes`, adentro tiene un atributo `-ArrayList<???> ???` y un método `+addMovil(???)`. El diagrama te está diciendo a gritos que esos `???` se tienen que reemplazar por `Vehiculo` porque esa es la clase a la que apunta la flecha.
+
+
+
+
