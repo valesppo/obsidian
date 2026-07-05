@@ -83,6 +83,7 @@ public:
 
 ```
 bool RedSegura::existeRutaSegura(int origenId, int destinoId) {
+
     if(origenId < 0 || origenId >= cantidadEstaciones || destinoId < 0 || destinoId >= cantidadEstaciones) return false;
     
     if(!estaciones[origenId].habilitada || !estaciones[destinoId].habilitada) return false;
