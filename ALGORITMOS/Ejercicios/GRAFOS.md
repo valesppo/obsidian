@@ -1,6 +1,6 @@
 [[ejercicios]]
 
-```
+```c++
 Una brigada debe llegar a una estación dañada atravesando únicamente estaciones habilitadas. El sistema no necesita saber la cantidad de transbordos, solo si existe al menos una ruta segura.
 
 La red se modela como un grafo no ponderado. Una ruta es segura si todas las estaciones del camino están habilitadas.
@@ -81,7 +81,7 @@ public:
 - No use recursión.
 ```
 
-```
+```c++
 bool RedSegura::existeRutaSegura(int origenId, int destinoId) {
 
     if(origenId < 0 || origenId >= cantidadEstaciones || destinoId < 0 || destinoId >= cantidadEstaciones) return false;
@@ -201,7 +201,7 @@ int RedComponentes::tamanoComponenteOperativa(int origenId) {
 ---
 
 
-```
+```c++
 Los túneles del sistema nocturno tienen un nivel de riesgo operativo según interferencia, seguridad y estado estructural. El centro de control necesita seleccionar la ruta de menor riesgo acumulado para mover una brigada.
 
 La red se modela como un grafo ponderado:
@@ -264,7 +264,7 @@ public:
 - No use `INT_MAX`; use `RIESGO_INFINITO`, que está definido en la clase.
 ```
 
-```
+```c++
 int RedRiesgo::riesgoMinimo(int origenId, int destinoId) {
     // 1. Validaciones Iniciales (Early Exits)
     if (origenId < 0 || origenId >= cantidadEstaciones || 
