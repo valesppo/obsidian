@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "136ec6860e507a7b",
+        "id": "8a2dc64f94a2a864",
         "type": "tabs",
         "children": [
           {
-            "id": "356603de226af5c2",
+            "id": "3c3395bb2c0253f9",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -108,7 +108,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ejercicios/ABB - arboles (del aula virtual).md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +117,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de ABB - arboles (del aula virtual)"
+              "title": "Enlaces entrantes"
             }
           },
           {
@@ -170,13 +169,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ejercicios/RECURSION.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de RECURSION"
+              "title": "Esquema"
             }
           },
           {
@@ -194,7 +192,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 574.5
+    "width": 411.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,13 +207,14 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "356603de226af5c2",
+  "active": "3a49e698d41ee53d",
   "lastOpenFiles": [
+    "2026-07-29.md",
+    "ScrollPDF/Idea.md",
     "Apunte Teórico-2024.docx.pdf",
     "Sin título.canvas",
     "digital2/RESUMEN.md",
     "Sin título.md",
-    "ScrollPDF/Idea.md",
     "digital2",
     "Pasted image 20260723132125.png",
     "ejercicio6.png",
