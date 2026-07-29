@@ -79,8 +79,8 @@ Para grafos ponderados, se puede almacenar el peso en lugar de un booleano (con 
 Aca en el ejemplo de la imagen seria algo asi:
 					destinos
                1 2 3 4 5
-posiciones	1  0 1 0 0 0
-			  2  1 0 1 1 0
+posiciones 	  1  0 1 0 0 0
+			2  1 0 1 1 0
             3  0 1 0 1 0
             4  0 1 1 0 1
             5  0 0 0 1 0 

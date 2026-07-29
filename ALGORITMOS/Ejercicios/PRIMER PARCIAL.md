@@ -560,7 +560,7 @@ Implementar el método `void intercambiarExtremos()` dentro de la clase `DLL<TDa
 - No usar estructuras auxiliares ni loops (esta operación debe ser estrictamente $\mathcal{O}(1)$).
 ```
 
-void intercambiarExtremos() {
+	void intercambiarExtremos() {
         // 1. Casos base: 0 o 1 elemento, no hay nada que intercambiar.
         if (m_head == nullptr || m_head == m_tail) return;
 

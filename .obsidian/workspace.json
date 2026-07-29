@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ALGORITMOS/Ejercicios/GRAFOS.md",
+                "file": "ALGORITMOS/Ejercicios/FINAL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GRAFOS"
+              "title": "FINAL"
+            }
+          },
+          {
+            "id": "636fac78dfdfe6b9",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://gemini.google.com/app/b40c211bfbbe7869",
+                "title": "algoritmos - Google Gemini",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "algoritmos - Google Gemini"
             }
           }
         ]
@@ -96,7 +110,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 224.5
+    "width": 213.5,
+    "collapsed": true
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -215,16 +230,27 @@
   },
   "active": "fa7bb602bc87b7c3",
   "lastOpenFiles": [
+    "ALGORITMOS/Ejercicios/FINAL.md",
+    "ALGORITMOS/Ejercicios/variaciones.md",
+    "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
-    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
-    "ALGORITMOS/Ejercicios/RECURSION.md",
-    "ALGORITMOS/Ejercicios/variaciones.md",
-    "ALGORITMOS/Ejercicios/repaso.md",
-    "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "Avanzada/Practica FINAL.md",
     "Avanzada/Teorico.md",
+    "ALGORITMOS/imagenes/Pasted image 20260524193128.png",
+    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/repaso.md",
+    "ScrollPDF/Idea.md",
+    "ALGORITMOS/Ejercicios/RECURSION.md",
+    "Avanzada/imagenes/ejercicio2 1.png",
+    "Avanzada/imagenes/ejercicio2.png",
+    "Avanzada/imagenes/ejercicio6.png",
+    "Avanzada/imagenes/ejercicio5.png",
+    "Avanzada/imagenes/ejercicio4.png",
+    "Avanzada/imagenes/ejercicio3.png",
+    "Avanzada/imagenes",
+    "ScrollPDF",
     "resumen de avanzada con claude.pdf",
     "Resumen de clase avanzada.pdf",
     "README.md",
@@ -237,30 +263,18 @@
     "ALGORITMOS/imagenes/Pasted image 20260608181723.png",
     "conflict-files-obsidian-git.md",
     "ALGORITMOS/imagenes",
-    "ALGORITMOS/imagenes/Pasted image 20260603115937.png",
     "Teorico ayed/Sin título.md",
-    "ALGORITMOS/imagenes/Pasted image 20260603131903.png",
-    "ALGORITMOS/imagenes/Pasted image 20260603115959.png",
-    "ALGORITMOS/imagenes/Pasted image 20260603115952.png",
     "youtube/videos de mi vida.md",
     "youtube",
-    "ALGORITMOS/imagenes/Pasted image 20260525205953.png",
-    "ALGORITMOS/imagenes/Pasted image 20260525201700.png",
-    "ALGORITMOS/imagenes/Pasted image 20260525170000.png",
     "2026-06-03 PARCIAL DE AYED.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175917.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md",
     "copilot/copilot-conversations",
-    "copilot",
     "copilot/copilot-custom-prompts/Make longer.md",
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
     "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts",
     "Sin título.canvas"
   ]
 }

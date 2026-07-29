@@ -170,7 +170,7 @@ public:
 - Use el arreglo `visitada` para evitar ciclos.
 ```
 
-int RedComponentes::dfsComponente(int estacionId, bool visitada[]){
+	int RedComponentes::dfsComponente(int estacionId, bool visitada[]){
 
 	visitada[estacionId] = true;
 	int cont = 1;
@@ -184,7 +184,7 @@ return cont;
 }
 
 
-int RedComponentes::tamanoComponenteOperativa(int origenId){
+	int RedComponentes::tamanoComponenteOperativa(int origenId){
 
 	if(origenId<0 || origenId>=cantidadEstaciones || !estaciones[origenId].operativo) return 0;
 	bool vis[MAX_ESTACIONES] = {false};
@@ -257,7 +257,7 @@ public:
 ```
 
 
-int RedRiesgo::riesgoMinimo(int origenId, int destinoId){
+	int RedRiesgo::riesgoMinimo(int origenId, int destinoId){
 
 	if(origenId<0 || origenId >= cantidadEstaciones || destinoId<0 || destinoId >= cantidadEstaciones) return -1;
 	if(origenId == destinoId) return 0;
