@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8a2dc64f94a2a864",
+        "id": "f4098ae365b1db7f",
         "type": "tabs",
         "children": [
           {
-            "id": "3c3395bb2c0253f9",
+            "id": "c191bc29ed9421da",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Redes de compu/TEORICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "TEORICO"
             }
           }
         ]
@@ -42,7 +42,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Explorador de archivos"
@@ -213,13 +215,16 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "3c3395bb2c0253f9",
+  "active": "f1f731b4b67c5a2c",
   "lastOpenFiles": [
+    "Apunte Teórico-2024.docx.pdf",
+    "Redes de compu/TEORICO.md",
+    "digital2/RESUMEN.md",
+    "Redes de compu",
+    "README.md",
     "2026-07-29.md",
     "ScrollPDF/Idea.md",
-    "Apunte Teórico-2024.docx.pdf",
     "Sin título.canvas",
-    "digital2/RESUMEN.md",
     "Sin título.md",
     "digital2",
     "Pasted image 20260723132125.png",
@@ -248,19 +253,15 @@
     "ScrollPDF",
     "resumen de avanzada con claude.pdf",
     "Resumen de clase avanzada.pdf",
-    "README.md",
     "Sin título.base",
     "Avanzada",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
     "ALGORITMOS",
     "conflict-files-obsidian-git.md",
-    "ALGORITMOS/imagenes",
     "Teorico ayed/Sin título.md",
     "youtube/videos de mi vida.md",
     "2026-06-03 PARCIAL DE AYED.md",
     "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175917.md",
-    "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md",
-    "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Clip Web Page.md"
+    "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md"
   ]
 }
