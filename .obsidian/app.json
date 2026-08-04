@@ -3,5 +3,7 @@
   "tabSize": 2,
   "readableLineLength": false,
   "alwaysUpdateLinks": true,
-  "useTab": true
+  "useTab": true,
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative"
 }

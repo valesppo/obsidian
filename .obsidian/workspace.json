@@ -20,6 +20,18 @@
               "icon": "lucide-file",
               "title": "TEORICO"
             }
+          },
+          {
+            "id": "e4bb01b9fd9ae7b9",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "1 Stallings - Comunicaciones y Redes de Computadores 7ed"
+            }
           }
         ]
       }
@@ -98,7 +110,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5
+    "width": 260.5,
+    "collapsed": true
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -215,10 +228,13 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "f1f731b4b67c5a2c",
+  "active": "c191bc29ed9421da",
   "lastOpenFiles": [
-    "Apunte Teórico-2024.docx.pdf",
+    "Pasted image 20260804142827.png",
+    "1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
     "Redes de compu/TEORICO.md",
+    "Pasted image 20260804134650.png",
+    "Apunte Teórico-2024.docx.pdf",
     "digital2/RESUMEN.md",
     "Redes de compu",
     "README.md",
@@ -248,7 +264,6 @@
     "ALGORITMOS/Ejercicios/repaso.md",
     "ALGORITMOS/Ejercicios/RECURSION.md",
     "Avanzada/imagenes/ejercicio2 1.png",
-    "Avanzada/imagenes/ejercicio2.png",
     "Avanzada/imagenes",
     "ScrollPDF",
     "resumen de avanzada con claude.pdf",
@@ -256,7 +271,6 @@
     "Sin título.base",
     "Avanzada",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
-    "ALGORITMOS",
     "conflict-files-obsidian-git.md",
     "Teorico ayed/Sin título.md",
     "youtube/videos de mi vida.md",
