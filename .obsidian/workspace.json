@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f4098ae365b1db7f",
+        "id": "ca60dbfdd1a1b303",
         "type": "tabs",
         "children": [
           {
-            "id": "c191bc29ed9421da",
+            "id": "3583f8c7511f273b",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -135,7 +135,7 @@
               "state": {
                 "file": "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
               "title": "Enlaces salientes"
@@ -200,7 +200,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 411.5
+    "width": 409.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -215,13 +215,15 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "c191bc29ed9421da",
+  "active": "3a49e698d41ee53d",
   "lastOpenFiles": [
     "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "==**GRAFOS**==.md",
+    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
+    "ejercicios.md",
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
-    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "Concurrente y paralela/Teorico/TEORICO.md",
     "Redes de compu/Terico/TEORICO.md",
     "Concurrente y paralela/Teorico",
@@ -261,8 +263,6 @@
     "conflict-files-obsidian-git.md",
     "Teorico ayed/Sin título.md",
     "youtube/videos de mi vida.md",
-    "2026-06-03 PARCIAL DE AYED.md",
-    "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175917.md",
-    "copilot/copilot-conversations/que_es_una_invariante_en_programacion@20260522_175853.md"
+    "2026-06-03 PARCIAL DE AYED.md"
   ]
 }

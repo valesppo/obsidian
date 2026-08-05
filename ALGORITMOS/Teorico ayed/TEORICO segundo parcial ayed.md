@@ -1,6 +1,6 @@
- 	[[ejercicios ]]
 
-# ==GRAFOS==
+ ==**GRAFOS**==
+ 
 
 **Definicion:** un grafo G=(v,e) es un par donde V es un conjundo de vertices (Nodos) y E es un conjunto de aristas.
 
