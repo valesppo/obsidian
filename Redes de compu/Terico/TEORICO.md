@@ -48,6 +48,7 @@ Stallings nos explica que el objetivo de cualquier sistema de comunicacion es, s
 
 Aunque todo esto parezca muy sencillo, en realidad no es tan asi, es mas complejo. Para hacerse una idea, la imagen siguiente lista algunas de las tareas claves que se deber realizar en un sistema de comunicaciones (es medio arbitrario ya que se pueden añadir elementos, mezclar items etc)
 
+
 ![704](imagenes/Pasted%20image%2020260804145215.png)
 
 
