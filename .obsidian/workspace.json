@@ -13,7 +13,7 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "Pasted image 20260804145215.png"
+                "file": "RedesDeCompu/imagenes/Pasted image 20260804145215.png"
               },
               "icon": "lucide-image",
               "title": "Pasted image 20260804145215"
@@ -112,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pasted image 20260804145215.png",
+                "file": "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -131,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pasted image 20260804145215.png",
+                "file": "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
@@ -213,10 +213,10 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "3583f8c7511f273b",
+  "active": "f1f731b4b67c5a2c",
   "lastOpenFiles": [
-    "Pasted image 20260804142827.png",
-    "Redes de compu/Terico/TEORICO.md",
+    "RedesDeCompu/imagenes/Pasted image 20260804142827.png",
+    "RedesDeCompu/Terico/TEORICO.md",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "==**GRAFOS**==.md",
@@ -224,18 +224,18 @@
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
-    "Concurrente y paralela/Teorico/TEORICO.md",
-    "Concurrente y paralela/Teorico",
-    "Concurrente y paralela",
+    "Concurrente_y_paralela/Teorico/TEORICO.md",
+    "Concurrente_y_paralela/Teorico",
+    "Concurrente_y_paralela",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
-    "Redes de compu/Terico",
+    "RedesDeCompu/Terico",
     "libros",
-    "Redes de compu/imagenes",
-    "Pasted image 20260804145215.png",
+    "RedesDeCompu/imagenes",
+    "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
     "Pasted image 20260804134650.png",
     "Apunte Teórico-2024.docx.pdf",
     "digital2/RESUMEN.md",
-    "Redes de compu",
+    "RedesDeCompu",
     "README.md",
     "2026-07-29.md",
     "ScrollPDF/Idea.md",
