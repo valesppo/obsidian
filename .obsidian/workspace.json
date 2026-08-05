@@ -11,14 +11,12 @@
             "id": "3583f8c7511f273b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Redes de compu/Terico/TEORICO.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20260804145215.png"
               },
-              "icon": "lucide-file",
-              "title": "TEORICO"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260804145215"
             }
           }
         ]
@@ -114,7 +112,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Redes de compu/Terico/TEORICO.md",
+                "file": "Pasted image 20260804145215.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Redes de compu/Terico/TEORICO.md",
+                "file": "Pasted image 20260804145215.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
@@ -217,6 +215,8 @@
   },
   "active": "3583f8c7511f273b",
   "lastOpenFiles": [
+    "Pasted image 20260804142827.png",
+    "Redes de compu/Terico/TEORICO.md",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "==**GRAFOS**==.md",
@@ -225,15 +225,13 @@
     "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
     "Concurrente y paralela/Teorico/TEORICO.md",
-    "Redes de compu/Terico/TEORICO.md",
     "Concurrente y paralela/Teorico",
     "Concurrente y paralela",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
     "Redes de compu/Terico",
     "libros",
     "Redes de compu/imagenes",
-    "Redes de compu/imagenes/Pasted image 20260804145215.png",
-    "Redes de compu/imagenes/Pasted image 20260804142827.png",
+    "Pasted image 20260804145215.png",
     "Pasted image 20260804134650.png",
     "Apunte Teórico-2024.docx.pdf",
     "digital2/RESUMEN.md",
@@ -262,7 +260,6 @@
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
     "conflict-files-obsidian-git.md",
     "Teorico ayed/Sin título.md",
-    "youtube/videos de mi vida.md",
-    "2026-06-03 PARCIAL DE AYED.md"
+    "youtube/videos de mi vida.md"
   ]
 }
