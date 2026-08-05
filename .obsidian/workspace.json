@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Redes de compu/Terico/TEORICO.md",
+                "file": "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEORICO"
+              "title": "TEORICO segundo parcial ayed"
             }
           }
         ]
@@ -98,8 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5,
-    "collapsed": true
+    "width": 260.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -115,17 +114,17 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de README"
+              "title": "Enlaces entrantes"
             }
           },
           {
@@ -134,12 +133,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cree un enlace.md",
+                "file": "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de cree un enlace"
+              "title": "Enlaces salientes"
             }
           },
           {
@@ -216,8 +215,10 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "c191bc29ed9421da",
+  "active": "3a49e698d41ee53d",
   "lastOpenFiles": [
+    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "Concurrente y paralela/Teorico/TEORICO.md",
     "Redes de compu/Terico/TEORICO.md",
     "Concurrente y paralela/Teorico",
@@ -251,10 +252,8 @@
     "Avanzada/Teorico.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
     "ALGORITMOS/Ejercicios/variaciones.md",
-    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
-    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "ALGORITMOS/Ejercicios/repaso.md",
     "ALGORITMOS/Ejercicios/RECURSION.md",
     "Avanzada/imagenes",

@@ -1,9 +1,5 @@
  	[[ejercicios]]
 
-
-![[AyED 03 - Sorting 02.ppt]]
-![[AyED 04 - Arboles 01.ppt]]![[AyED 05 - Arboles 02_v2.ppt]]![[AyED 07 - Grafos v1.ppt]]![[AyED 07 - Grafos v2.ppt]]![[slides.pptx]]![[ultimaclase_ayed.pptx]]
-
 # ==GRAFOS==
 
 **Definicion:** un grafo G=(v,e) es un par donde V es un conjundo de vertices (Nodos) y E es un conjunto de aristas.
