@@ -11,12 +11,14 @@
             "id": "3583f8c7511f273b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "RedesDeCompu/imagenes/Pasted image 20260804145215.png"
+                "file": "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260804145215"
+              "icon": "lucide-file",
+              "title": "TEORICO Y PRACTICO"
             }
           }
         ]
@@ -96,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5
+    "width": 260.5,
+    "collapsed": true
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -213,8 +216,12 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "f1f731b4b67c5a2c",
+  "active": "3a49e698d41ee53d",
   "lastOpenFiles": [
+    "Pasted image 20260806155642.png",
+    "Pasted image 20260806154638.png",
+    "Pasted image 20260806154212.png",
+    "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
     "RedesDeCompu/imagenes/Pasted image 20260804142827.png",
     "RedesDeCompu/Terico/TEORICO.md",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
@@ -224,14 +231,13 @@
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
-    "Concurrente_y_paralela/Teorico/TEORICO.md",
+    "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
     "Concurrente_y_paralela/Teorico",
     "Concurrente_y_paralela",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
     "RedesDeCompu/Terico",
     "libros",
     "RedesDeCompu/imagenes",
-    "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
     "Pasted image 20260804134650.png",
     "Apunte Teórico-2024.docx.pdf",
     "digital2/RESUMEN.md",
@@ -249,8 +255,6 @@
     "ejercicio2.png",
     "Avanzada/Practica FINAL.md",
     "Avanzada/nose.md",
-    "ejercicio3.png",
-    "Pasted image 20260723132131.png",
     "Avanzada/Teorico.md",
     "ALGORITMOS/Ejercicios/variaciones.md",
     "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
