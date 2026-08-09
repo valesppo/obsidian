@@ -8,17 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3583f8c7511f273b",
+            "id": "478a5e3ab8c0022b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
+                "file": "RedesDeCompu/Terico/TEORICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEORICO Y PRACTICO"
+              "title": "TEORICO"
             }
           }
         ]
@@ -98,8 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5,
-    "collapsed": true
+    "width": 260.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -216,14 +215,83 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "3a49e698d41ee53d",
+  "floating": {
+    "id": "58897a4bd2543209",
+    "type": "floating",
+    "children": [
+      {
+        "id": "18f76e562668d248",
+        "type": "window",
+        "children": [
+          {
+            "id": "edcfbbb48f925eb5",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "3583f8c7511f273b",
+                "type": "leaf",
+                "state": {
+                  "type": "pdf",
+                  "state": {
+                    "file": "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf"
+                  },
+                  "icon": "lucide-file-text",
+                  "title": "1 Stallings - Comunicaciones y Redes de Computadores 7ed"
+                }
+              },
+              {
+                "id": "a640b3fcf1d82ced",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://gemini.google.com/app/1f5f96c48ebfe9e4",
+                    "title": "Configurar Agent Client en Obsidian - Google Gemini",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Configurar Agent Client en Obsidian - Google Gemini"
+                }
+              },
+              {
+                "id": "311c2b9fa931980f",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://www.guru99.com/es/difference-between-circuit-switching-and-packet-switching.html",
+                    "title": "Diferencia entre conmutación de circuitos y conmutación de paquetes",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Diferencia entre conmutación de circuitos y conmutación de paquetes"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical",
+        "x": 1920,
+        "y": 0,
+        "width": 1280,
+        "height": 480,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "478a5e3ab8c0022b",
   "lastOpenFiles": [
-    "Pasted image 20260806155642.png",
-    "Pasted image 20260806154638.png",
-    "Pasted image 20260806154212.png",
+    "RedesDeCompu/Terico/TEORICO.md",
+    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
+    "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
+    "Concurrente_y_paralela/imagenes",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260806155642.png",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260806154638.png",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260806154212.png",
     "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
     "RedesDeCompu/imagenes/Pasted image 20260804142827.png",
-    "RedesDeCompu/Terico/TEORICO.md",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "==**GRAFOS**==.md",
@@ -231,10 +299,8 @@
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
-    "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
     "Concurrente_y_paralela/Teorico",
     "Concurrente_y_paralela",
-    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
     "RedesDeCompu/Terico",
     "libros",
     "RedesDeCompu/imagenes",
@@ -252,7 +318,6 @@
     "ejercicio6.png",
     "ejercicio5.png",
     "ejercicio4.png",
-    "ejercicio2.png",
     "Avanzada/Practica FINAL.md",
     "Avanzada/nose.md",
     "Avanzada/Teorico.md",
@@ -260,7 +325,6 @@
     "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
     "ALGORITMOS/Ejercicios/repaso.md",
     "ALGORITMOS/Ejercicios/RECURSION.md",
-    "Avanzada/imagenes",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
     "conflict-files-obsidian-git.md",
     "Teorico ayed/Sin título.md",

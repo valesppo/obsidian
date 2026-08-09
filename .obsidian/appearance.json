@@ -1,6 +1,7 @@
 {
   "cssTheme": "Minimal",
   "enabledCssSnippets": [],
-  "accentColor": "",
-  "theme": "obsidian"
+  "accentColor": "#00d5ff",
+  "theme": "obsidian",
+  "baseFontSize": 17
 }
