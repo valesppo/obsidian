@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "478a5e3ab8c0022b",
+            "id": "685d3296f36ab9d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -212,79 +212,15 @@
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-statusbar-pomo:Start pomodoro": false
+      "obsidian-statusbar-pomo:Start pomodoro": false,
+      "agent-client:Open agent client": false
     }
   },
-  "floating": {
-    "id": "58897a4bd2543209",
-    "type": "floating",
-    "children": [
-      {
-        "id": "18f76e562668d248",
-        "type": "window",
-        "children": [
-          {
-            "id": "edcfbbb48f925eb5",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "3583f8c7511f273b",
-                "type": "leaf",
-                "state": {
-                  "type": "pdf",
-                  "state": {
-                    "file": "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf"
-                  },
-                  "icon": "lucide-file-text",
-                  "title": "1 Stallings - Comunicaciones y Redes de Computadores 7ed"
-                }
-              },
-              {
-                "id": "a640b3fcf1d82ced",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://gemini.google.com/app/1f5f96c48ebfe9e4",
-                    "title": "Configurar Agent Client en Obsidian - Google Gemini",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Configurar Agent Client en Obsidian - Google Gemini"
-                }
-              },
-              {
-                "id": "311c2b9fa931980f",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://www.guru99.com/es/difference-between-circuit-switching-and-packet-switching.html",
-                    "title": "Diferencia entre conmutación de circuitos y conmutación de paquetes",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Diferencia entre conmutación de circuitos y conmutación de paquetes"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "vertical",
-        "x": 1920,
-        "y": 0,
-        "width": 1280,
-        "height": 480,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "478a5e3ab8c0022b",
+  "active": "685d3296f36ab9d6",
   "lastOpenFiles": [
-    "RedesDeCompu/Terico/TEORICO.md",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
+    "RedesDeCompu/Terico/TEORICO.md",
+    "Pasted image 20260809194248.png",
     "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
     "Concurrente_y_paralela/imagenes",
     "Concurrente_y_paralela/imagenes/Pasted image 20260806155642.png",
@@ -317,7 +253,6 @@
     "Pasted image 20260723132125.png",
     "ejercicio6.png",
     "ejercicio5.png",
-    "ejercicio4.png",
     "Avanzada/Practica FINAL.md",
     "Avanzada/nose.md",
     "Avanzada/Teorico.md",
