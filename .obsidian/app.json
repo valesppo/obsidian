@@ -1,7 +1,7 @@
 {
   "spellcheck": false,
   "tabSize": 2,
-  "readableLineLength": false,
+  "readableLineLength": true,
   "alwaysUpdateLinks": true,
   "useTab": true,
   "useMarkdownLinks": true,

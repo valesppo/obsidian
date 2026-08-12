@@ -85,3 +85,31 @@ Las WAN se han implementado usando una de las dos tecnologías siguientes: conmu
 ATM se puede considerar, a su vez, como una evolución de la conmutación de circuitos. En la conmutación de circuitos se dispone solamente de circuitos a velocidad fija de transmisión entre los sistemas finales. ATM permite la definición de múltiples canales virtuales con velocidades de transmisión que se definen dinámicamente en el instante en el que se crea el canal virtual. Al utilizar celdas de tamaño fijo, ATM es tan eficaz que puede ofrecer un canal a velocidad de transmisión constante aunque esté usando una técnica de conmutación de paquetes. Por tanto, en este sentido, ATM es una generalización de la conmutación de circuitos en la que se ofrecen varios canales, en los que la velocidad de transmisión se fija dinámicamente para cada canal según las necesidades.
 
 **Redes de area local (LAN)** : 
+
+
+
+==**Clase teorica del 10**==
+
+**Tipos de transmision:**
+
+
+
+**Tecnicas de transmision de datos:**
+	Banda base:  es una señal sin modular (se transmite asi como llego)
+	Banda ancha:  es una señal modulada (llevo la banda base a una banda ancha)
+	Codigo manchester: me sirve para cuando me llegan una seguidilla de 1 (algo asi 
+	(10011110) y eso se ve bastante mal en la llegada, entonces el codigo machester me  
+	ayuda a resolver eso
+
+
+**Perturbaciones en la transmision:**
+	Atenuacion: La energia de una señal decae con la distancia, por lo que hay que 
+	asegurarse que llegue con la suficiente energia como para ser captada por la 
+	circuiteria del receptor
+	Distorcion de retardo: 
+
+
+
+hacer hasta la pregunta 3.20
+leer capitulo 3 de stalling
+

@@ -78,7 +78,7 @@ La función debe analizar la matriz de adyacencia del grafo dirigido y retornar 
     
 - **Reto de eficiencia:** ¿Puedes resolverlo en complejidad temporal **$O(V)$** sin verificar toda la matriz $O(V^2)$? (Pista: Un método elegante es descartar candidatos por pares o simular dos punteros). Si lo haces en $O(V^2)$ también será válido pero sumará menos puntaje en optimización.
 
-```
+```c++
 #include <iostream>
 #include <vector>
 

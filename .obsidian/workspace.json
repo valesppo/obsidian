@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "ca60dbfdd1a1b303",
+        "id": "7de3dc8cb54f7056",
         "type": "tabs",
         "children": [
           {
-            "id": "685d3296f36ab9d6",
+            "id": "349b2e0d7f1690c4",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "RedesDeCompu/Terico/TEORICO.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "TEORICO"
+              "title": "Nueva pestaña"
             }
           }
         ]
@@ -98,7 +94,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5
+    "width": 260.5,
+    "collapsed": true
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -212,16 +209,17 @@
       "command-palette:Abrir paleta de comandos": false,
       "bases:Crear nueva base": false,
       "obsidian-git:Open Git source control": false,
-      "obsidian-statusbar-pomo:Start pomodoro": false,
-      "agent-client:Open agent client": false
+      "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "685d3296f36ab9d6",
+  "active": "349b2e0d7f1690c4",
   "lastOpenFiles": [
-    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
+    "Concurrente_y_paralela/CLASES/TEORICO.md",
+    "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "RedesDeCompu/Terico/TEORICO.md",
+    "ALGORITMOS/Ejercicios/FINAL.md",
+    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
     "Pasted image 20260809194248.png",
-    "Concurrente_y_paralela/Teorico/TEORICO Y PRACTICO.md",
     "Concurrente_y_paralela/imagenes",
     "Concurrente_y_paralela/imagenes/Pasted image 20260806155642.png",
     "Concurrente_y_paralela/imagenes/Pasted image 20260806154638.png",
@@ -234,8 +232,7 @@
     "ejercicios.md",
     "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "ALGORITMOS/Ejercicios/GRAFOS.md",
-    "ALGORITMOS/Ejercicios/FINAL.md",
-    "Concurrente_y_paralela/Teorico",
+    "Concurrente_y_paralela/CLASES",
     "Concurrente_y_paralela",
     "RedesDeCompu/Terico",
     "libros",

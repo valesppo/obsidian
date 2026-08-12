@@ -34,3 +34,5 @@ El metodo invocado retorna un valor,
 -  Fragmento combinado: 
 	-  Permite representar la interaccion entre fragmentos 
 	- Un fragmento combinado se define por un operador interaccion y los   operandos de interaccion correspondientes
+
+
