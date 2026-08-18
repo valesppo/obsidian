@@ -20,34 +20,6 @@
               "icon": "lucide-file",
               "title": "PRACTICO"
             }
-          },
-          {
-            "id": "e16b1a75c8ccae55",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://claude.ai/chat/c0d84f14-bec1-4fc4-8259-06c12b47c4f6",
-                "title": "Fundamentos de hilos en Java - Claude",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Fundamentos de hilos en Java - Claude"
-            }
-          },
-          {
-            "id": "c301d13a71b4058b",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://search.brave.com/search?q=cuales+son+los+estados+de+un+proceso&source=web&conversation=09755fd4bb4d2e76b956e3bb56dd79e8d3c5",
-                "title": "cuales son los estados de un proceso - Brave Search",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "cuales son los estados de un proceso - Brave Search"
-            }
           }
         ]
       }
