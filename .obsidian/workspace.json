@@ -8,13 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "349b2e0d7f1690c4",
+            "id": "3c16443375e772c8",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Concurrente_y_paralela/CLASES/PRACTICO.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "Nueva pestaña"
+              "title": "PRACTICO"
+            }
+          },
+          {
+            "id": "e16b1a75c8ccae55",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://claude.ai/chat/c0d84f14-bec1-4fc4-8259-06c12b47c4f6",
+                "title": "Fundamentos de hilos en Java - Claude",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Fundamentos de hilos en Java - Claude"
+            }
+          },
+          {
+            "id": "c301d13a71b4058b",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://search.brave.com/search?q=cuales+son+los+estados+de+un+proceso&source=web&conversation=09755fd4bb4d2e76b956e3bb56dd79e8d3c5",
+                "title": "cuales son los estados de un proceso - Brave Search",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "cuales son los estados de un proceso - Brave Search"
             }
           }
         ]
@@ -52,7 +84,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": " ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,8 +126,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5,
-    "collapsed": true
+    "width": 260.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -212,32 +243,38 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "349b2e0d7f1690c4",
+  "active": "3c16443375e772c8",
   "lastOpenFiles": [
-    "Concurrente_y_paralela/CLASES/TEORICO.md",
     "Concurrente_y_paralela/CLASES/PRACTICO.md",
+    "Concurrente_y_paralela/CLASES/TEORICO.md",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260818194918.png",
+    "Pasted image 20260818194854.png",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260818191827.png",
+    "RedesDeCompu/imagenes/Pasted image 20260813190810.png",
+    "RedesDeCompu/imagenes/Pasted image 20260813194851.png",
+    "Pasted image 20260818164412.png",
+    "Pasted image 20260816100359.png",
     "RedesDeCompu/Terico/TEORICO.md",
+    "Pasted image 20260816100414.png",
+    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
+    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/repaso.md",
+    "ALGORITMOS/Ejercicios/GRAFOS.md",
     "ALGORITMOS/Ejercicios/FINAL.md",
+    "RedesDeCompu/Terico/PRACTICO.md",
+    "Pasted image 20260813194817.png",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
-    "Pasted image 20260809194248.png",
+    "Pasted image 20260813175517.png",
     "Concurrente_y_paralela/imagenes",
-    "Concurrente_y_paralela/imagenes/Pasted image 20260806155642.png",
-    "Concurrente_y_paralela/imagenes/Pasted image 20260806154638.png",
-    "Concurrente_y_paralela/imagenes/Pasted image 20260806154212.png",
-    "RedesDeCompu/imagenes/Pasted image 20260804145215.png",
-    "RedesDeCompu/imagenes/Pasted image 20260804142827.png",
     "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
     "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "==**GRAFOS**==.md",
     "ejercicios.md",
-    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
-    "ALGORITMOS/Ejercicios/GRAFOS.md",
     "Concurrente_y_paralela/CLASES",
     "Concurrente_y_paralela",
     "RedesDeCompu/Terico",
     "libros",
     "RedesDeCompu/imagenes",
-    "Pasted image 20260804134650.png",
     "Apunte Teórico-2024.docx.pdf",
     "digital2/RESUMEN.md",
     "RedesDeCompu",
@@ -247,19 +284,12 @@
     "Sin título.canvas",
     "Sin título.md",
     "digital2",
-    "Pasted image 20260723132125.png",
-    "ejercicio6.png",
-    "ejercicio5.png",
     "Avanzada/Practica FINAL.md",
     "Avanzada/nose.md",
     "Avanzada/Teorico.md",
     "ALGORITMOS/Ejercicios/variaciones.md",
-    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
-    "ALGORITMOS/Ejercicios/repaso.md",
     "ALGORITMOS/Ejercicios/RECURSION.md",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
-    "conflict-files-obsidian-git.md",
-    "Teorico ayed/Sin título.md",
-    "youtube/videos de mi vida.md"
+    "conflict-files-obsidian-git.md"
   ]
 }

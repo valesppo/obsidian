@@ -28,6 +28,10 @@ El problema: si tu programa tiene que hacer varias cosas que no dependen unas de
 
 Los hilos permiten que **un mismo proceso tenga múltiples líneas de ejecución concurrentes**, compartiendo memoria (variables, objetos) pero avanzando de forma independiente.
 
+**Proceso:** Un proceso es un programa en ejecucion, un proceso simple tiene un hilo de ejecucion, un programa, entradas/salidas y estados.
+* **Procesos cooperantes:** Se entiende que los procesos interactuan entre si.
+* **Procesos independientes:** No requieren informacion de otros.
+
 **Proceso vs. Hilo — la distinción clave:**
 
 - Un **proceso** tiene su propio espacio de memoria, aislado de otros procesos (ej: abrir Chrome y abrir Word son dos procesos distintos, no comparten memoria).
@@ -68,3 +72,57 @@ Ademas los programas concurrentes deben, en general, colaborar para llegar a un 
 	    3. B intenta Candado 1 y falla; lo suelta.
 	    4. Vuelven a intentar y repiten el ciclo.
 	- No hay deadlock (no están “esperando” bloqueados), pero tampoco avanzan ⇒ livelock.
+
+**Operacion atomica:** En programación concurrente, una operación es **atómica** cuando se ejecuta de manera **indivisible e ininterrumpida**, lo que significa que **no puede ser interrumpida** por otros hilos o procesos y **no se queda a medias**.
+
+**Interleaving:** Son los procesos concurrentes que se ejecutan intercalando las acciones atomicas que las componen.
+- **Mecanismo de ejecución:** En lugar de que cada proceso se ejecute de principio a fin sin interrupciones, el planificador del sistema operativo asigna pequeños turnos de CPU a cada tarea. Esto crea la ilusión de simultaneidad, especialmente en sistemas de un solo núcleo.  
+- **No determinismo:** Dado que el orden exacto en que ocurren estos entrelazamientos puede variar entre ejecuciones, los programas concurrentes son inherentemente no determinísticos. Esto significa que dos ejecuciones del mismo código pueden producir resultados diferentes o diferentes órdenes de operaciones. 
+- **Implicaciones en la sincronización:** El **interleaving** es la raíz de problemas como las **condiciones de carrera** y las **violaciones de atomicidad**.  La sincronización (usando mutex, semáforos, etc.) tiene como objetivo principal restringir estos entrelazamientos para garantizar que ciertas secuencias de instrucciones se ejecuten como una unidad atómica, excluyendo la intercalación de otros hilos durante su ejecución.
+
+
+**Sistema de transicion de estados:**  Es un grafo dirigido en el cual los nodos son los estados del sistema (posiblemente infinitos estados), las aristas son las transisicones atomicas de estados en estados, dadas por las sentencias del sistema.
+
+# Estados de los procesos:
+![420](../imagenes/Pasted%20image%2020260818191827.png)
+
+**Modelo de 3 estados (el nucleo de la ejecucion):** 
+* Ready: El proceso tiene todo lo que necesita para trabajar, excepto el procesador. Esta en fila esperando su turno.
+* Running: El proceso tiene el procesador y esta ejecutando sus instrucciones en este preciso momento.
+* Blocked: El proceso no puede avanzar, incluso si le dieran el procesador, porque esta esperando que ocurra un evento externo (como leer un archivo del disco duro, esperar que el usuario presione una tecla, o esperar la respuesta de otro proceso).
+**Modelo 5 estados (El ciclo completo de vida):**
++ Activo: esta ejecutandose
++ Preparado: Todas las tareas estan listas para ejecutarse pero se espera a que un/el procesador quede libre (hay otros procesos mas prioritarios en ejecucion)
++ Bloqueado o suspendido: Que se termine una operacion de E/S o que se reciba una señal de sincronizacion
++ Nonato: Indica que el programa realmente existe pero todavia no es conocido por el OS
++ Muerto: Cuando ha terminado su ejecucion o el sistema operativo a detectado un error fatal.
+
+# Estados de un hilo:
+
+![443](../imagenes/Pasted%20image%2020260818194918.png)
+
++ **New:** El hilo acaba de ser creado en la memoria (se construyó el objeto, por eso la flecha dice `construct`), pero el sistema operativo aún no lo ha puesto en la fila para ejecutarse. Solo cuando en el código se llama al método `Thread.start()`, el hilo cobra vida y pasa a estar listo.
+
++ **Ready to run:** El hilo tiene el control de la CPU en este milisegundo y está ejecutando su código. **El rol del Scheduler:** Notarás que hay un óvalo naranja llamado **Scheduler** que envuelve a `Ready-to-Run` y `Running`. El planificador de la CPU está constantemente moviendo los hilos entre "Listo" y "Ejecutando" (dándoles turnos de fracciones de segundo) para que parezca que todos avanzan a la vez.
+
++ **Dead:** El hilo terminó de hacer su trabajo (su método `run()` completó su tarea o hubo un error que lo forzó a salir). Un hilo muerto no puede volver a iniciar.
+
++ **Sleeping - pausa por tiempo:** El hilo decide pausarse a sí mismo voluntariamente por un tiempo específico usando `Thread.sleep(milisegundos)`. Es como poner una alarma. No necesita que nadie lo despierte. Simplemente espera a que el tiempo transcurra (`Elapsed Time ends`) y automáticamente vuelve a la fila de `Ready-to-Run`.
+
++ **Waiting - pausa por señales:** El hilo se pausa de forma indefinida porque necesita que **otro hilo** le avise que ya puede continuar. Entra en este estado usando `lock.wait()`. Un hilo en _Waiting_ jamás se despertará solo por más que pase el tiempo. Depende exclusivamente de que otro hilo ejecute un comando de notificación (`lock.notify()` o `lock.notifyAll()`) para decirle: "Oye, ya hice mi parte, te toca". Al recibir la señal, vuelve a `Ready-to-Run`.
+
++ **Blocking - pausa por recurso o sincronizacion:** El hilo intenta acceder a un recurso que está ocupado o es lento. Entra aquí por dos razones principales:
+	+ **Bloqueo por I/O:** Está esperando leer un archivo grande del disco duro o esperando datos de internet.
+	+ **Bloqueo por Monitor (Candado):** Está intentando entrar a una sección de código protegido (`Synchronize block`), pero otro hilo ya tiene la llave ("lock") y está adentro.
+	El hilo no está esperando un tiempo ni un aviso explícito, está esperando que **se libere un recurso**. Tan pronto como el disco duro termine de traer el dato (`I/O completed`) o el otro hilo suelte la llave de la sección protegida (`lock acquired`), este hilo se desbloquea y vuelve a `Ready-to-Run`
+
+
+
+
+
+
+
+**ver indeterminismo**
+**entender redes de petri**
+
+que es el universo del discurso (pregunta de coloquio) : es la combinacion de todos los simbolos en el orden que quieras

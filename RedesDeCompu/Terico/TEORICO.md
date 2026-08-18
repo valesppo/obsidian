@@ -107,9 +107,3 @@ ATM se puede considerar, a su vez, como una evolución de la conmutación de cir
 	asegurarse que llegue con la suficiente energia como para ser captada por la 
 	circuiteria del receptor
 	Distorcion de retardo: 
-
-
-
-hacer hasta la pregunta 3.20
-leer capitulo 3 de stalling
-

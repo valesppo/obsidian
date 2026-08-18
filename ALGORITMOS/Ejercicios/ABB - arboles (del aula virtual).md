@@ -106,7 +106,8 @@ int ABB<T>::size() const {
 
 ==Implementá la obtención de **mínimo** y **máximo** del ABB. Completá los helpers `minNode(const Nodo* p)` (avanza siempre por `izq`) y `maxNode(const Nodo* p)` (avanza por `der`), y los wrappers públicos `min()` y `max()` que devuelven referencias a los datos de esos nodos. Si el árbol está vacío, ambos métodos deben lanzar `std::runtime_error("ABB vacio")`.==
 
-```// Helpers (nodo extremo por la izquierda/derecha)
+```c++
+// Helpers (nodo extremo por la izquierda/derecha)
 template <class T>
 const Nodo<T>* ABB<T>::minNode(const Nodo<T>* p) const{
     if(p==nullptr) return nullptr;
