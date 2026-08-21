@@ -7,3 +7,7 @@ nosotros podemos mandar una  serie de bits asi 010100101000101001000 y pueden se
 
 ultimo ejercicio 
 ![](../imagenes/Pasted%20image%2020260813194851.png)
+
+
+# Clase practica del 20
+vimos protocolos TCP, UDP, QUIC, MATT, SSH, FTP, HTTP

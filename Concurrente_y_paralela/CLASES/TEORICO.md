@@ -126,3 +126,5 @@ Ademas los programas concurrentes deben, en general, colaborar para llegar a un 
 **entender redes de petri**
 
 que es el universo del discurso (pregunta de coloquio) : es la combinacion de todos los simbolos en el orden que quieras
+
+

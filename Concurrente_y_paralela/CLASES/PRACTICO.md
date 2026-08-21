@@ -96,3 +96,8 @@ public class Main {
 **¿Por qué falla?** `valor++` en realidad son tres pasos: leer `valor`, sumarle 1, escribir el resultado. Si dos hilos hacen esto "al mismo tiempo", pueden ambos leer el mismo valor antes de que ninguno escriba, y uno de los incrementos se pierde.
 
 `join()` en el ejemplo de arriba merece explicación: hace que el hilo que lo llama (acá, `main`) **espere** hasta que el hilo `t1`/`t2` termine, antes de seguir. Sin eso, `main` podría imprimir el resultado antes de que los hilos terminen de contar.
+
+
+# clase del 20 practica
+
+**Seccion Critica:** 

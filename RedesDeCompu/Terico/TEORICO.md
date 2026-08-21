@@ -90,20 +90,135 @@ ATM se puede considerar, a su vez, como una evolución de la conmutación de cir
 
 ==**Clase teorica del 10**==
 
-**Tipos de transmision:**
+# Espectro electromagnetico:
+Es el conjunto de todas las frecuencias posibles a las que se produce radiacion electromagnetica
+![488](../../Pasted%20image%2020260821113822.png)
+
+- **Espectro de una señal**: rango de frecuencias que contiene.
+- **Ancho de banda**: anchura del espectro, es decir, la diferencia entre la frecuencia más alta y la más baja con energía significativa.
+
+# Tipos de transmision:
+
+**Asincronos:** Los datos se transmiten enviando un caracter a la vez, con un metodo de inicio/parada. Los datos se transmiten a intervalos irregulares conforme se necesitan. Los bits de arranque/parada se agregan al inicio y al final de cada mensaje. La transmision asincrona es mas apropiada para la comunicacion de datos que comprende dispositivos de entrada/salida de baja velocidad, ejemplo: impresoras en serie.
+
+**Sincronos:** La transmision es continua, los caracteres se envian uno tras otro por las lineas sin interrupcion. La transmision sincrona es mucho mas rapida debido a que no se tienen que enviar señales adicionales por las lineas para cada uno de los caracteres. La fuente y el destino operan con una sincronizacion para permitir la transmision de datos de alta velocidad. Este tipo de transmision no necesita bits de arranque/parada.
+
+# Tecnicas de transmision de datos:
+
+**Banda base:** La banda base es un tipo de transmisión digital en la que la señal se transmite sin modular y codificada. En ella no se permite la multiplexación en frecuencia. Se usa todo el ancho de banda que ofrece el sistema, todo un canal. Su problema es que las distancias máximas de empleo son de pocos kilómetros usando repetidores, y su ventaja es el ahorro de los aparatos de modulación/demodulación. Se emplea, por tanto, para cortas distancias debido a su bajo coste.
+
+**Banda ancha:** La banda ancha es un tipo de transmisión de señales analógicas moduladas y multiplexadas en frecuencias. Cada canal lógico transporta información diferenciada sobre datos, sonido y video. Se puede transmitir a distintas velocidades en cada canal, con distancias elevadas de varias decenas de kilómetros y posible uso de amplificadores para aumentar la longitud total. Se necesita una ruta para transmitir y otra para recibir datos.
+- Mid-split: Divide el canal en dos rangos de frecuencia, uno para transmitir y otro para recibir
+- Dual-cable: Se utilizan dos cables diferentes, uno para transmitir y el otro para recibir informacion
+
+# Dificultades en la transmision
+Ninguna señal llega al receptor exactamente igual a como fue transmitida. Las tres causas principales de deterioro son:
+
+**Atenuación**
+La señal pierde intensidad (potencia) a medida que recorre el medio. Consideraciones prácticas:
+- La señal recibida debe tener suficiente potencia para que el receptor la pueda detectar e interpretar correctamente.
+- Debe mantenerse **suficientemente por encima del ruido** para que se reciba sin error.
+- La atenuación es **mayor a frecuencias más altas**, lo que provoca **distorsión** (porque las distintas componentes de frecuencia de una señal compuesta se atenúan de forma desigual).
+
+**Distorsión de retardo (delay distortion)**
+Ocurre solo en medios **guiados** (cable, fibra), y es consecuencia de que **la velocidad de propagación de una señal varía con la frecuencia**. Esto tiene un efecto muy concreto: las distintas componentes de frecuencia de una señal llegan al receptor en **instantes ligeramente distintos**, aunque hayan sido enviadas al mismo tiempo.
+Consecuencia práctica: en transmisión digital, esto provoca que parte de la energía de un bit se "derrame" sobre bits vecinos, generando **interferencia intersímbolo (ISI)**, uno de los factores limitantes principales de la tasa de bits que un canal puede soportar de forma confiable.
+
+**Ruido**
+- **Ruido térmico**: causado por la agitación térmica de los electrones en cualquier conductor; está presente en todos los dispositivos y medios de transmisión, es función de la temperatura, y se distribuye uniformemente en el espectro (por eso también se llama _ruido blanco_). No se puede eliminar, marca un límite físico inferior al desempeño del sistema.
+- **Ruido de intermodulación**: aparece cuando señales de distintas frecuencias comparten el mismo medio y producen señales espurias en frecuencias suma/diferencia de las originales (o sus múltiplos), típicamente por no linealidades del transmisor/receptor o del medio.
+- **Diafonía (crosstalk)**: acoplamiento no deseado entre líneas de transmisión cercanas (ej. se escucha una conversación de fondo en otra línea telefónica); también ocurre por acoplamiento electromagnético entre cables próximos.
+- **Ruido impulsivo**: pulsos irregulares de corta duración pero alta amplitud, originados por fenómenos externos (descargas eléctricas, fallas en el sistema de comunicación). Es el más disruptivo para **datos digitales**, porque un solo pulso puede corromper varios bits consecutivos, mientras que en voz analógica suele ser tolerable (produce un "clic" o "chasquido" audible).
+
+# Ancho de banda
+
+Es la cantidad de informacion que se puede transmitir por un canal de transmision en un intervalo de tiempo dado, tambien se llama capacidad de canal y se mide en bits por segundo (bps). Una forma de aumentar el ancho de banda en un canal es incrementando el numero de cables paralelos. Otra forma es aumentar la velocidad del paso de informacion por el cable.
+
+# Modulacion digital y multiplexacion
+
+La multiplexión es la técnica que permite que **varias fuentes de datos compartan un mismo medio de transmisión**, aprovechando que la capacidad del medio suele ser mayor que la que necesita un solo usuario.
+
+**Multiplexión por división de frecuencia (FDM – Frequency Division Multiplexing)**
+- Se usa cuando el ancho de banda útil del medio excede el ancho de banda requerido por cada señal individual.
+- Cada señal se modula sobre una portadora de frecuencia distinta, de modo que el espectro total se divide en canales (bandas de frecuencia) que no se superponen.
+- Cada usuario tiene asignado su propio "hueco" de frecuencia y puede transmitir simultáneamente con los demás.
+- Se necesitan **bandas de guarda** entre canales para evitar interferencia entre señales adyacentes (evitar solapamiento espectral).
+- Ejemplo clásico: transmisión de radio FM, TV por cable analógica, telefonía analógica multicanal.
+**Ventaja**: no requiere sincronización temporal entre canales.  
+**Desventaja**: susceptible a intermodulación si el medio no es perfectamente lineal.
+
+**Multiplexión por división de tiempo (TDM – Time Division Multiplexing)**
+Se aplica a señales digitales (o analógicas convertidas a digital), y en lugar de dividir el espectro, se divide el tiempo de uso del medio en intervalos (slots).
+
+**a) TDM síncrono (TDM síncrona / síncrona)**
+- El medio se organiza en **tramas (frames)**, y cada trama se divide en un número fijo de **slots de tiempo**, uno por cada fuente/canal.
+- Cada fuente tiene **su slot reservado**, se use o no en ese instante — si una fuente no tiene datos, ese slot se transmite vacío.
+- Requiere que la **tasa de datos del medio sea mayor o igual a la suma de las tasas de todas las fuentes**.
+- Ineficiente cuando alguna fuente tiene tráfico intermitente o "en ráfagas" (bursty), porque se desperdician slots.
+
+**b) TDM estadístico (TDM asíncrono / por demanda)**
+- Los slots se asignan **dinámicamente**, solo a las fuentes que realmente tienen datos para enviar en ese momento.
+- Es más eficiente porque no reserva capacidad fija: aprovecha mejor el ancho de banda cuando el tráfico es variable.
+- Como los slots ya no tienen una posición fija predecible, cada slot debe llevar una **etiqueta/dirección** que indique a qué fuente pertenece (a diferencia del síncrono, donde la posición del slot en la trama ya identifica la fuente).
+- A cambio de esa eficiencia, se paga un costo de **overhead** (los bits de dirección) y de **complejidad** en el control de acceso.
+ 
+**Multiplexión por división de código (CDM / CDMA – Code Division Multiple Access)**
+
+A diferencia de FDM (que divide frecuencia) y TDM (que divide tiempo), en CDM todos los usuarios transmiten simultáneamente en la misma banda de frecuencia y todo el tiempo, y lo que los distingue es un **código único** asignado a cada uno.
+**Ventajas**
+- No requiere dividir el espectro en bandas fijas (como FDM) ni sincronizar slots de tiempo (como TDM).
+- Es robusto frente a interferencia y ruido de banda angosta, precisamente porque la energía de cada señal está distribuida ("esparcida") sobre un ancho de banda amplio.
+- Permite que varios usuarios compartan la misma banda de forma más flexible, típico en sistemas celulares (3G) y en el estándar original de WiFi.
+
+# Medios de transmision
+Los medios se agrupan en medios guiados (cables) y medios no guiados (transmision inalambrica)
+
+# Medios guiados:
+
+* ***Par Trenzado**
+	Hecho de cables de cobre trenzados por parejas sobre un alma común en el centro, en número de 2/4 pares con aislamiento individual y un aislamiento común exterior. Los conductores son de cobre y tienen un diámetro entre 0,4 y 0,9 mm. Es débil a las perturbaciones, y suele aparecer apantallado. Hay tres tipos de par trenzado: UTP (sin blindaje), STP (con blindaje común), y FTP (blindaje común y otro para cada cable trenzado). Tienen bajo coste y ancho de banda reducido.
+
+-  **Cable Coaxial**
+	Formado por dos conductores concéntricos: uno interno de cobre y otro a modo de pantalla. El central es más ancho (1/5 mm). Usado para redes mixtas fibra óptica-cable coaxial. Poco sensible a interferencias. Es caro, rígido y grueso. Existe delgado (RG58) y grueso (RG59). Tiene menor atenuación por unidad de longitud, mayor respuesta en frecuencia, mejor inmunidad frente al ruido, coste más elevado y manejo más difícil.
+
+* **Fibra Óptica**
+	Está constituida por dos cilindros coaxiales de silicio de alta pureza, que por medio de la reflexión de la luz logra transmitir la información. Sus características son: transmite luz sin interferencias, gran capacidad de transmisión, no sufre interferencias por campos eléctricos y magnéticos, energía puesta en juego muy baja, gran ancho de banda, diámetro reducido, peso reducido, material totalmente dieléctrico.
+	
+	Las fibras ópticas se componen de un cilindro material dieléctrico llamado núcleo, rodeado por un revestimiento también dieléctrico con un índice de refracción ligeramente inferior al del núcleo. La forma de propagación de la señal se basa en las propiedades de refracción y reflexión de la luz.
 
 
+# Medios NO guiados
 
-**Tecnicas de transmision de datos:**
-	Banda base:  es una señal sin modular (se transmite asi como llego)
-	Banda ancha:  es una señal modulada (llevo la banda base a una banda ancha)
-	Codigo manchester: me sirve para cuando me llegan una seguidilla de 1 (algo asi 
-	(10011110) y eso se ve bastante mal en la llegada, entonces el codigo machester me  
-	ayuda a resolver eso
+- **Direccional**: la antena transmisora concentra la energía en un haz estrecho, por lo que transmisor y receptor deben estar alineados con precisión. Se usa en frecuencias más altas (microondas).
+- **Omnidireccional**: la señal se dispersa en todas direcciones y puede ser captada por múltiples antenas receptoras. Típica de frecuencias más bajas (ondas de radio).
 
+**Microondas terrestres**
+- Antenas típicas: **parabólicas**, con diámetros de alrededor de 3 metros, montadas en torres altas para maximizar la distancia (línea de vista) y evitar obstáculos.
+- Frecuencias: rango aproximado de **1 a 40 GHz**; a mayor frecuencia, mayor ancho de banda posible y mayores tasas de datos.
+- Requiere **línea de vista** entre transmisor y receptor; por la curvatura terrestre, se necesitan **repetidores/relés** espaciados (históricamente cada ~40-50 km en enlaces intermunicipales), o bien torres muy altas.
+- **Aplicación clásica**: enlaces punto a punto de larga distancia (antes de la fibra óptica, era la base de la telefonía de larga distancia), y también enlaces entre edificios como alternativa al cableado.
+-  Problema particular: desvanecimiento por múltiples trayectorias (multipath fading) parte de la señal puede llegar al receptor por trayectos reflejados (agua, terreno) además del directo, y estas señales pueden interferir destructivamente entre sí, sobre todo en climas húmedos.
+- También es sensible a la **atenuación por lluvia**, más marcada a frecuencias por encima de los 10 GHz.
 
-**Perturbaciones en la transmision:**
-	Atenuacion: La energia de una señal decae con la distancia, por lo que hay que 
-	asegurarse que llegue con la suficiente energia como para ser captada por la 
-	circuiteria del receptor
-	Distorcion de retardo: 
+**Microondas satelitales**
+- El satélite actúa como una **estación repetidora** en el espacio: recibe en una frecuencia (**uplink**), amplifica/regenera la señal, y retransmite en otra frecuencia distinta (**downlink**), para evitar que la señal saliente interfiera con la entrante.
+- La configuración más común es el **satélite geoestacionario**: orbita a una altura tal (~35.786 km) que su período orbital coincide con el de rotación de la Tierra, por lo que **parece fijo** respecto a un punto de la superficie terrestre. Esto simplifica enormemente el apuntado de las antenas terrestres.
+- **Aplicaciones**: difusión de TV, transmisión telefónica de larga distancia, redes privadas de datos, sistemas de posicionamiento (GPS).
+- **Limitación importante: retardo de propagación** — como la distancia es enorme, hay un retardo perceptible (~250 ms ida y vuelta para geoestacionarios), lo cual es problemático para aplicaciones interactivas o en tiempo real (ej. telefonía, videoconferencia).
+- Comparte las mismas bandas de frecuencia que microondas terrestres, por lo que puede haber **interferencia** entre sistemas satelitales y terrestres si no se coordina bien la ubicación y el apuntado de antenas.
+
+**Ondas de radio (radio broadcast)**
+- Rango de frecuencia: aproximadamente **30 MHz a 1 GHz**, cubre buena parte de la banda de VHF y UHF.
+- A diferencia de las microondas, las ondas de radio son **omnidireccionales**: no requieren antenas parabólicas alineadas, sino antenas más simples que emiten en todas direcciones.
+- Por eso, el transmisor no necesita apuntar físicamente al receptor, lo que facilita la comunicación con receptores múltiples o móviles.
+- **Aplicaciones típicas**: radio FM, televisión (VHF/UHF), y comunicaciones que no requieren un enlace punto a punto exclusivo.
+- **Problema principal**: al ser omnidireccional, es más susceptible a **interferencia entre transmisores** que usan frecuencias cercanas, por lo que su uso está fuertemente regulado (asignación de bandas por organismos reguladores).
+- También está sujeta a **atenuación multitrayecto** por reflexión en edificios, terreno, y la ionósfera (dependiendo de la frecuencia específica).
+
+**Transmision infrarroja**
+- Frecuencia: banda de **infrarrojo**, justo por debajo del espectro visible.
+- Se genera y detecta mediante **transceptores** (emisores/receptores) que **no requieren licencia** del organismo regulador (a diferencia de radio y microondas), porque no atraviesa objetos sólidos.
+- **Característica clave: no puede atravesar paredes ni objetos opacos.** Esto tiene dos consecuencias:
+    - **Ventaja de seguridad**: un sistema infrarrojo en una habitación no interfiere con uno en la habitación contigua, ni puede ser interceptado desde afuera del recinto.
+    - **Limitación de alcance/uso**: solo sirve para comunicación de **corto alcance y dentro de un mismo ambiente cerrado** (ej. controles remotos, comunicación IrDA entre dispositivos cercanos).
+- No sufre interferencia entre sistemas en habitaciones distintas, pero dentro del mismo ambiente puede verse afectado por la **luz solar directa**, que satura el receptor infrarrojo.
