@@ -98,6 +98,54 @@ public class Main {
 `join()` en el ejemplo de arriba merece explicación: hace que el hilo que lo llama (acá, `main`) **espere** hasta que el hilo `t1`/`t2` termine, antes de seguir. Sin eso, `main` podría imprimir el resultado antes de que los hilos terminen de contar.
 
 
-# clase del 20 practica
+# ==clase del 20 practica==
 
-**Seccion Critica:** 
+**Seccion Critica:** Bloque de codigo o una parte del programa donde se accede a un recurso y no puede ser ejecutada por mas de un hilo al mismo tiempo
+
+# Synchronized
+Cada objeto en java tiene un candado invisible asociado (se llama monitor). Synchronized es la palabra que le dice a un hilo: "antes de ejecutar este codigo, toma el candado de este objeto. Si otro hilo ya lo tiene, espera tu turno".
+
+Cuando ponés `synchronized` en la firma de un método de instancia, todo el cuerpo del método pasa a ser la sección crítica, y el candado que se usa es el del objeto sobre el que se llama (`this`).
+```java
+class Contador {
+    private int valor = 0;
+
+    public synchronized void incrementar() {
+        valor++;
+    }
+}
+
+ES EQUIVALENTE A ESTO: 
+
+public void incrementar() {
+    synchronized (this) {
+        valor++;
+    }
+}
+```
+El metodo static synchronized es un caso especial porque no usa el candado de un objeto si no el de la clase.
+
+```java
+class Contador {
+    private static int total = 0;
+
+    public static synchronized void incrementarTotal() {
+        total++;
+    }
+}
+```
+aca el candado no es una instancia (this), sino de Contador. Esto importa porque si tenes synchronized de instancia y static synchronized en la misma clase, son candados distintos. Es un error comun pensar que protegen lo mismo.
+
+En vez de sincronizar el metodo entero, delimitas manualmente donde empieza y termina la seccion critica:
+```java
+public void procesar() {
+    calculoLibre(); // no crítico, corre sin bloquear a nadie
+
+    synchronized (this) {
+        valor++; // sección crítica explícita y mínima
+    }
+
+    logear("listo"); // no crítico
+}
+```
+Esto es mejor que sincronizar todo el metodo porque reduce el tiempo que un hilo mantiene el candado tomado
