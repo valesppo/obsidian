@@ -98,8 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 260.5,
-    "collapsed": true
+    "width": 260.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -218,11 +217,14 @@
   },
   "active": "956d252231d48386",
   "lastOpenFiles": [
+    "Sin título.canvas",
+    "Sin título.base",
+    "RedesDeCompu/imagenes/Pasted image 20260821113822.png",
+    "Sin título.md",
     "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Concurrente_y_paralela/CLASES/TEORICO.md",
     "RedesDeCompu/Terico/TEORICO.md",
     "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
-    "Pasted image 20260821113822.png",
     "RedesDeCompu/Terico/PRACTICO.md",
     "Pasted image 20260820150959.png",
     "Concurrente_y_paralela/imagenes/Pasted image 20260818194918.png",
@@ -254,9 +256,6 @@
     "README.md",
     "2026-07-29.md",
     "ScrollPDF/Idea.md",
-    "Sin título.canvas",
-    "Sin título.md",
-    "digital2",
     "Avanzada/Practica FINAL.md",
     "Avanzada/nose.md",
     "Avanzada/Teorico.md",

@@ -92,7 +92,7 @@ ATM se puede considerar, a su vez, como una evolución de la conmutación de cir
 
 # Espectro electromagnetico:
 Es el conjunto de todas las frecuencias posibles a las que se produce radiacion electromagnetica
-![488](../../Pasted%20image%2020260821113822.png)
+![488](../imagenes/Pasted%20image%2020260821113822.png)
 
 - **Espectro de una señal**: rango de frecuencias que contiene.
 - **Ancho de banda**: anchura del espectro, es decir, la diferencia entre la frecuencia más alta y la más baja con energía significativa.
