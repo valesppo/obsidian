@@ -11,3 +11,9 @@ ultimo ejercicio
 
 # Clase practica del 20
 vimos protocolos TCP, UDP, QUIC, MATT, SSH, FTP, HTTP
+
+# Clase del 27
+presento el TP3 y se entrega el 
+
+usamos udp par ahacer transmisiones de videos o cosas asi ya que puede habre perdida de paquetes
+y perdemos paquetes porque cuando mando paquetes a una direccion, no puedo saber la capacidad de ese canal, o sea que saturo el canal y pierdo los paquetes

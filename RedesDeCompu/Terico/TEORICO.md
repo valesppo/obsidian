@@ -222,3 +222,20 @@ Los medios se agrupan en medios guiados (cables) y medios no guiados (transmisio
     - **Ventaja de seguridad**: un sistema infrarrojo en una habitación no interfiere con uno en la habitación contigua, ni puede ser interceptado desde afuera del recinto.
     - **Limitación de alcance/uso**: solo sirve para comunicación de **corto alcance y dentro de un mismo ambiente cerrado** (ej. controles remotos, comunicación IrDA entre dispositivos cercanos).
 - No sufre interferencia entre sistemas en habitaciones distintas, pero dentro del mismo ambiente puede verse afectado por la **luz solar directa**, que satura el receptor infrarrojo.
+
+
+# Clase teorica del 24
+
+# Modelo OSI
+
+![538](../imagenes/Pasted%20image%2020260824184950.png)
+
+
+# Modelo TCP/IP
+
+capitulo2 des staling
+
+
+
+
+

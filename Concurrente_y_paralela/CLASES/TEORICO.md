@@ -119,8 +119,64 @@ Ademas los programas concurrentes deben, en general, colaborar para llegar a un 
 
 
 
+# Gramatica y automatas
 
+**Univserso del discurso**
+El conjunto de todas las cadenas que se pueden formar con los simbolos de un alfabeto V se denomina universo del discurso de V y se representa por W(V)
+Evidentemente W(V) es un conjunto infinito
+La cadena vacía pertenece a W(V) (Cierre o Clausura de un Alfabeto).
+-  Sea un alfabeto con una sola letra V = { a }, entonces el universo del discurso es :
+   W(V) = {λ, a, aa, aaa, aaaa, . . . } que contiene infinitas cadenas.
+- **Clausura Positiva de un Alfabeto**: la Clausura Positiva de una Alfabeto está formado por el Universo de Discurso del Alfabeto sin incluir la palabra vacía.
+- **Cierre o Clausura de un Alfabeto**: el Cierre o Clausura de un Alfabeto es el Universo de Discurso de dicho Alfabeto, incluyendo la palabra vacía.
 
+**Gramática**
+La gramática es un ente formal para especificar, de una manera finita, el
+conjunto de cadenas de símbolos que constituyen un lenguaje.
+ **Autómata**
+Un autómata es una construcción lógica que recibe una entrada y produce
+una salida en función de todo lo recibido hasta ese instante.
+
+# Jerarquia de las gramaticas
+
+Chomsky definio cuatro tipos distintos de gramaticas en funcion de la forma de las reglas de derivacion P
+- La clasificación comienza con un tipo de gramáticas que pretende ser universal, aplicando restricciones a sus reglas de derivación se van obteniendo los otros tres tipos de gramáticas.
+**Gramaticas de tipo 0:** Tambien llamadas gramaticas no restringidas o gramaticas con estructura de frase
+**Gramaticas de tipo 1:** Tambien llamadas gramaticas sensibles al contexto
+**Gramaticas de tipo 2:** Tambien se denominan gramaticas de contexto libre o libres de contexto
+**Gramaticas de tipo 3:** Tambien denominadas regulares o gramaticas lineales a la derecha comienzan sus reglas de produccion por un simbolo terminal, que puede ser seguido o no por un simbolo no terminal
+![](../../Pasted%20image%2020260830184318.png)
+
+**Expresiones regulares:** Las expresiones regulares se introducen para describir los lenguajes regulares (Gramatica tipo 3), entonces las expresiones regulares seran metalenguajes.
+Es decir las expresiones regulares son un metalenguaje para describir los lenguajes regulares.
+
+# Automatas
+Es un dispositivo que manipula cadenas de simbolos que se le presentan a su entradam produciendo otras tiras o cadenas de simbolos a su salida.
+- El automata recibe los simbolos de entrada, uno detras de otro, es decir secuencialmente
+El **Estado de un automata** es toda la informacion necesaria en un momento dado, para poder deducir, dado un simbolo de entrada en ese momento, cual sera el simbol de salida.
+
+Se define **Configuracion de un automata** a su situacion en un instante
+Se define **movimiento de un automata** como transito entre dos configuraciones.
+
+# Diagrama de Mealy / Moore
+Son grafos dirigidos en el que cada nodo corresponde a un estado y cada transicion se corresponde con un evento.
+Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(evento, estadoActual) -> estadoSiguiente**
+
+ **Maquina de mealy:** La salida esta expresada en los arco junto al evento, la salida depende del estado y de donde se viene
+- ![318](../../Pasted%20image%2020260830191143.png)
+- ![](../../Pasted%20image%2020260830191223.png)
+- Las maquinas de mealy reaccionan mas rapido a las entradas ya que reaccionan en el mismo ciclo, no esperan el reloj
+- Las maquinas de mealy tienen menos estados, diferentes salidas en arcos (n²) en lugar de estados (n)
+- Para una maquina de mealy cada arco esta etiquetado con un valor de salida.
+- En las máquinas Mealy, el cambio de entrada puede provocar un cambio en la salida tan pronto como se realiza la lógica, un gran problema cuando dos máquinas están interconectadas, la retroalimentación asíncrona puede ocurrir si no se tiene cuidado.
+
+**Maquina de moore:** La salida esta expresada en los estados, y la salida solo depende del estado
+- ![322](../../Pasted%20image%2020260830191158.png)
+- ![](../../Pasted%20image%2020260830191242.png)
+- Las maquinas de moore son mas seguras de usar.
+- Las salidas cambian en el borde del reloj (siempre un ciclo mas tarde).
+- Para una maquina de moore, cada nodo(estado) esta etiquetado con un valor de salida
+- En las máquinas Moore, es posible que se necesite más lógica para descodificar el estado en salidas: más retardos de puerta después del flanco del reloj.
 
 **ver indeterminismo**
 **entender redes de petri**
@@ -128,3 +184,24 @@ Ademas los programas concurrentes deben, en general, colaborar para llegar a un 
 que es el universo del discurso (pregunta de coloquio) : es la combinacion de todos los simbolos en el orden que quieras
 
 
+# Clase del 25 teorico
+
+tengo que repasar lo ultimo de automatas (parte 1)
+seguimos con automatas
+
+entra en coloquio jerarquia de las gramaticas
+con la gramatica tipo 3 nos sobra para ahora
+
+un automata puede ser no determinista (saber que es determinista y no determinista)
+
+el estado de un automata es como sacarle una foto al estado de la variable
+
+movimiento es cambio de estado
+
+puede salir mealy y moore en coloquio
+
+la maquina de mealy es mas expresiva (porque tiene menos estados)
+
+vamos a usar un automata finito para el tp
+
+descargar Jflap
