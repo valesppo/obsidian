@@ -178,11 +178,23 @@ Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(
 - Para una maquina de moore, cada nodo(estado) esta etiquetado con un valor de salida
 - En las máquinas Moore, es posible que se necesite más lógica para descodificar el estado en salidas: más retardos de puerta después del flanco del reloj.
 
-**ver indeterminismo**
-**entender redes de petri**
+**Automatas conexos:** 
+- Se dice que es conexo si todos los estados de Q son accesibles desde el estado inicial q0.
+- Dado un automata no conexo se puede encontrar otro equivalente y conexo eliminando los estados inaccesibles
 
-que es el universo del discurso (pregunta de coloquio) : es la combinacion de todos los simbolos en el orden que quieras
+**Automatas DETERMINISTAS:**
+- Para cada estado en que se encuentre el automata y para cada simbolo del alfabeto que lea, existe exactamente una transicion hacia el siguiente estado. El automata nunca tiene que elegir que camino tomar.
+**Automatas NO DETERMINISTAS**
+- Desde un mismo estado y leyendo el mismo simbolo, el automata puede bifurcarse hacia varios estados simultaneamente, o puede no tener nignuna trancicion definida.
 
+![620](../../Pasted%20image%2020260830222447.png)
+
+**Gramatica:** Se utiliza para generar o describir las reglas de un lenguaje.
+**Automatas:** Mecanismos matematicos que se utilizan para reconocer o evaluar ese lenguaje
+**Gramatica tipo 3 (Automata asociado)** : Automatas finitos que reconocen lenguajes regulares
+**Gramatica tipo 2 (Automata asociado)**: Automatas de pila, estos superan a los finitos porque incluyen una memoria (una pila), lo que les permite verificar estructuras
+**Gramaticas tipo 2 (Automata asociado)**: Automata linealmente acotado, son similares a una maquina de turing pero con memoria mas restringida
+**Gramaticas tipo 0 (Automata asociado)**: Maquinas de turing, representan el nivel maximo del poder de la computacion, generando lenguajes recursivamente enumerables que engloban cualquier problema decidible que pueda resolver una computadora moderna. 
 
 # Clase del 25 teorico
 
