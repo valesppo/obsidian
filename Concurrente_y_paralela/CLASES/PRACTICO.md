@@ -12,6 +12,7 @@ es un lenguaje grafico para modelar, visualizar, especificar, construir y docume
 
 **Diagrama de clases:** 
 ![](../imagenes/Pasted%20image%2020260806154212.png)
+
 Se deben mostrar la visibilidad de los miembros de la clase (atributo o metodo)
 ( - ) para privado
 ( + ) para publico

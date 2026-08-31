@@ -145,7 +145,7 @@ Chomsky definio cuatro tipos distintos de gramaticas en funcion de la forma de l
 **Gramaticas de tipo 1:** Tambien llamadas gramaticas sensibles al contexto
 **Gramaticas de tipo 2:** Tambien se denominan gramaticas de contexto libre o libres de contexto
 **Gramaticas de tipo 3:** Tambien denominadas regulares o gramaticas lineales a la derecha comienzan sus reglas de produccion por un simbolo terminal, que puede ser seguido o no por un simbolo no terminal
-![](../../Pasted%20image%2020260830184318.png)
+![](../imagenes/Pasted%20image%2020260830184318.png)
 
 **Expresiones regulares:** Las expresiones regulares se introducen para describir los lenguajes regulares (Gramatica tipo 3), entonces las expresiones regulares seran metalenguajes.
 Es decir las expresiones regulares son un metalenguaje para describir los lenguajes regulares.
@@ -163,16 +163,16 @@ Son grafos dirigidos en el que cada nodo corresponde a un estado y cada transici
 Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(evento, estadoActual) -> estadoSiguiente**
 
  **Maquina de mealy:** La salida esta expresada en los arco junto al evento, la salida depende del estado y de donde se viene
-- ![318](../../Pasted%20image%2020260830191143.png)
-- ![](../../Pasted%20image%2020260830191223.png)
+- ![318](../imagenes/Pasted%20image%2020260830191143.png)
+- ![](../imagenes/Pasted%20image%2020260830191223.png)
 - Las maquinas de mealy reaccionan mas rapido a las entradas ya que reaccionan en el mismo ciclo, no esperan el reloj
 - Las maquinas de mealy tienen menos estados, diferentes salidas en arcos (n²) en lugar de estados (n)
 - Para una maquina de mealy cada arco esta etiquetado con un valor de salida.
 - En las máquinas Mealy, el cambio de entrada puede provocar un cambio en la salida tan pronto como se realiza la lógica, un gran problema cuando dos máquinas están interconectadas, la retroalimentación asíncrona puede ocurrir si no se tiene cuidado.
 
 **Maquina de moore:** La salida esta expresada en los estados, y la salida solo depende del estado
-- ![322](../../Pasted%20image%2020260830191158.png)
-- ![](../../Pasted%20image%2020260830191242.png)
+- ![322](../imagenes/Pasted%20image%2020260830191158.png)
+- ![](../imagenes/Pasted%20image%2020260830191242.png)
 - Las maquinas de moore son mas seguras de usar.
 - Las salidas cambian en el borde del reloj (siempre un ciclo mas tarde).
 - Para una maquina de moore, cada nodo(estado) esta etiquetado con un valor de salida
