@@ -217,3 +217,89 @@ la maquina de mealy es mas expresiva (porque tiene menos estados)
 vamos a usar un automata finito para el tp
 
 descargar Jflap
+
+# Clase del 1 teorico
+ver redes de petri
+
+
+## Overview
+
+La clase introdujo los fundamentos teóricos y prácticos de las Redes de Petri, utilizándolas como herramienta para modelar sistemas concurrentes, analizar cambios de estado y comprender el formalismo matemático subyacente. Se exploraron conceptos críticos de diseño de sistemas como el manejo de secciones críticas, interbloqueos (deadlocks), indeterminismo y resolución de conflictos estructurales.
+
+## Puntos clave técnicos tratados
+
+- **Estructura y marcado de la red**
+    
+    - Una Red de Petri se compone formalmente de plazas (representadas como círculos), transiciones (cambios de estado), tokens (marcas internas) y arcos con pesos específicos.
+        
+    - El estado general del sistema se denomina "marcado" y se representa matemáticamente mediante un vector que indica la cantidad exacta de tokens presentes en cada plaza en un momento dado.
+        
+- **Sensibilización y disparo de transiciones**
+    
+    - Una transición se "sensibiliza" (mostrándose en color rojo en el simulador) únicamente cuando sus plazas de entrada contienen la cantidad de tokens suficientes que exige el peso de sus arcos.
+        
+    - Al efectuar un disparo, la transición extrae los tokens correspondientes de las plazas de entrada y genera nuevos tokens en las plazas de salida.
+        
+- **Formalismo matemático (Matriz de Incidencia)**
+    
+    - Detrás de la interfaz visual existe una "matriz de incidencia" que representa matemáticamente a la red.
+        
+    - La evolución del sistema no requiere del dibujo; se calcula a alta velocidad mediante sumas y restas de matrices, evaluando qué transición resta tokens (entradas) y cuál los suma (salidas).
+        
+- **Clasificación y "sabores" de las Redes de Petri**
+    
+    - **Autónomas:** Evolucionan por sí mismas basándose exclusivamente en el flujo de tokens.
+        
+    - **No autónomas / Temporales:** Su evolución depende de eventos externos (ej. la activación de un sensor o un timbre) o del transcurso del tiempo.
+        
+    - **Ordinarias:** Se definen porque todos sus arcos tienen un peso estricto de uno.
+        
+    - **Coloreadas:** Los tokens poseen distintos colores (identificadores) para superponer lógicas complejas sobre una misma estructura topológica.
+        
+    - **Máquina de estado:** Una red básica donde cada transición tiene estrictamente una única plaza de entrada y una única plaza de salida.
+        
+- **Indeterminismo y Conflictos**
+    
+    - Existe un conflicto estructural cuando dos transiciones comparten una misma plaza de entrada y compiten por un token; si se dispara una, absorbe el token y la otra transición "muere" (se inactiva).
+        
+    - Cuando el sistema puede tomar múltiples caminos sin un evento o condición que obligue a elegir uno específico, se genera un estado no determinístico que el programador debe resolver aplicando una política de decisión.
+        
+
+## Ejemplos prácticos revisados en clase
+
+- **Secciones críticas y bloqueos:** Se modeló el acceso a un recurso exclusivo utilizando una plaza que admite el paso de un solo token a la vez, demostrando gráficamente cómo el sistema sufre un interbloqueo ("punto muerto") si las tareas extraen recursos y no los devuelven correctamente al finalizar.
+    
+- **Sistema de timbre y cámara (Forks):** Se ilustró el paralelismo mediante un evento que, al dispararse (tocar un timbre), divide el flujo de ejecución (fork) agregando tokens en dos ramas separadas simultáneamente: una para sacar una foto y otra para hacer sonar la campana.
+    
+- **Estación de trenes:** El profesor expuso un modelo desarrollado en su experiencia profesional simulando el arribo de pasajeros a una estación de tren, donde utilizó redes temporales con distribuciones de probabilidad para actuar como generadores constantes de tokens y evaluar cargas en hora pico.
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- **¿La evolución de los estados depende únicamente de la estructura de la red?** — No; los estados alcanzables de la red dependen tanto de su diseño estructural como de su marcado inicial. Añadir un solo token extra en una plaza al inicio cambia por completo la cantidad de estados por los que el sistema puede transitar.
+    
+- **¿Se pueden disparar dos transiciones exactamente al mismo tiempo?** — En la teoría formal de las redes de petri es posible; sin embargo, en esta materia no se aplicará de esa forma para no perder la "traza" del sistema, ya que registrar disparos simultáneos dificulta auditar el recorrido exacto de ejecución del programa concurrente.
+    
+
+## Decisiones y acción a seguir
+
+- **Enfoque de la cátedra:**
+    
+    - El objetivo del cuatrimestre no es quedarse solo con el aspecto gráfico de mover marcas ("pelotitas"), sino comprender la matriz de incidencia matemática subyacente para poder implementar y auditar lógicamente el modelo.
+        
+- _(Nota: El fragmento transcrito no contiene definiciones administrativas sobre entregas de trabajos prácticos, logística de grupos o fechas de parciales para esta clase en particular)_.
+    
+
+## Tareas y responsables
+
+- **Alumnos / Desarrolladores:**
+    
+    - Deberán aplicar lógicas de control ("políticas") de forma manual para resolver escenarios de indeterminismo y conflicto cuando diseñen sistemas de toma de decisiones o asigne recursos concurrentes.
+        
+- _(Nota: No se asignaron entregables específicos durante el registro de esta clase)_.
+    
+
+## Observaciones finales
+
+- El docente enfatizó que el máximo "poder" de las Redes de Petri es su capacidad visual e inmediata para exponer problemas severos de arquitectura de software, detectando fugas de hilos (_thread leaks_) o cuellos de botella en secciones críticas mucho antes de escribir el código fuente final.
+

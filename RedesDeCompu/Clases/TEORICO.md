@@ -204,7 +204,80 @@ Los medios se agrupan en medios guiados (cables) y medios no guiados (transmisio
 
 capitulo2 des staling
 
+# Clase del 31
 
+que seria un bucle de corriente?
+ver uhf y vfh
+quediferencia fisica hay entre los cables utp y coaxiales 
 
+## Overview
 
+La clase se centró en los fundamentos de la capa física de redes y el concepto de encapsulamiento de datos, acompañados por relatos de la experiencia profesional del docente en infraestructura de servidores y virtualización. Además, se debatió sobre el diseño de sistemas de comunicación espacial independiente de los estándares tradicionales, la codificación de señales (como el código Manchester) y los procesos de señalización en medios físicos.
+
+## Puntos clave técnicos tratados
+
+- **Capas lógicas y encapsulamiento**
+    
+    - A nivel lógico, los datos que interesan al usuario se transmiten mediante un proceso de encapsulamiento, agregando progresivamente cabeceras (como HTTP, TCP e IP) a medida que descienden en el modelo.
+        
+    - En medios cableados estándar, la cabecera final corresponde al protocolo IEEE 802.3 (Ethernet en variantes UTP o fibra óptica), mientras que en redes inalámbricas se utiliza el protocolo IEEE 802.11 (Wi-Fi).
+        
+    - Se aclaró que la "capa física" definida por los estándares IEEE abarca la capa física tradicional más la mitad inferior de la capa de enlace de datos (subcapa MAC), que es donde operan las direcciones físicas de las placas de red.
+        
+- **Arquitectura de servidores y almacenamiento**
+    
+    - Las redes utilizan el protocolo Fiber Channel a través de fibra óptica para conectar computadoras virtuales con servidores de almacenamiento dedicados (storage).
+        
+    - Este tipo de arquitectura de almacenamiento separado es completamente transparente para el sistema operativo de la máquina virtual.
+        
+- **Áreas funcionales de la capa física**
+    
+    - La implementación física requiere abordar tres áreas: componentes físicos (hardware, cables y placas), codificación y señalización.
+        
+    - La codificación convierte la secuencia de bits en patrones predecibles; por ejemplo, el código Manchester inserta una variación (subida o bajada) a la mitad de cada pulso de transmisión.
+        
+    - Esta alta variación en la señal es fundamental porque facilita la sincronización del dispositivo receptor sin depender de contar microsegundos de tiempo exactos.
+        
+    - La señalización es el proceso final donde los bits ya codificados se mapean a valores de voltaje o señales electromagnéticas (como en antenas Wi-Fi) para ingresar al canal físico.
+        
+
+## Ejemplos prácticos revisados en clase
+
+- **Data Center del gobierno de Córdoba:** Se expuso el proyecto (2014-2015) de migración de servidores físicos independientes a un entorno de máquinas virtuales, integrando servidores RISC (IBM), servidores CISC (Intel) y equipamiento de interconectividad Cisco.
+    
+- **Diseño del satélite "70/30":** Se utilizó el desarrollo de un satélite tipo cubesat en la facultad para ilustrar que, al diseñar tecnología aeroespacial, los ingenieros pueden crear protocolos de red desde cero sin estar obligados a ser compatibles con los modelos OSI o TCP/IP hasta su conexión con la estación terrena.
+    
+- **Lectura del Código Manchester:** Se analizó visualmente cómo este código, utilizado históricamente en conexiones 10Base-T, evita que una señal se mantenga plana al forzar cambios constantes de fase, permitiendo que el receptor identifique cuándo hay un cambio o cuándo está en el medio de un pulso.
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- **¿Es obligatorio diseñar sistemas de comunicación basándose siempre en los modelos estándar como OSI o IEEE?** — No; en sectores cerrados como la industria aeroespacial, los ingenieros aplican un pensamiento abstracto para resolver los problemas de comunicación específicos (ruido, ancho de banda, tolerancia) creando arquitecturas propias desde cero, sin el requisito previo de la compatibilidad comercial.
+    
+- **¿Por qué es preferible usar una sola marca en proyectos de infraestructura complejos?** — Porque, aunque el hardware de diferentes marcas (Cisco, IBM, Intel) se venda como compatible, su integración en la práctica genera fricciones que obligan a invertir el doble de esfuerzo para lograr que funcionen en conjunto.
+    
+- **¿Para qué sirve provocar tantas variaciones en la señal mediante la codificación?** — Sirve para ayudar en la sincronización del receptor; al introducir cambios de voltaje predecibles, el sistema receptor puede leer la señal de forma confiable sin necesitar un reloj local perfecto ni depender de temporizadores de precisión.
+    
+
+## Decisiones y acción a seguir
+
+- **Mentalidad de diseño:** Se instruyó a los estudiantes a desarrollar un modelo de "pensamiento abstracto" sobre las comunicaciones, aprendiendo a identificar y solucionar los problemas físicos de red más allá de memorizar modelos teóricos.
+    
+- _Nota: El documento de origen no contiene decisiones sobre parciales, entregas o logística administrativa aplicables a esta sección._
+    
+
+## Tareas y responsables
+
+- **Docentes y Facultad (Departamento Aeroespacial):**
+    
+    - Continuar con el diseño e implementación interdisciplinaria del satélite cordobés cubesat.
+        
+- _Nota: El documento de origen no asigna tareas específicas de cursada a los alumnos en esta clase._
+    
+
+## Observaciones finales
+
+- Como recomendación profesional clave, el profesor enfatizó que si a los alumnos les toca liderar un proyecto complejo en el futuro, es preferible sacrificar algunas prestaciones secundarias para elegir hardware de una sola marca y ahorrarse numerosas horas de problemas técnicos.
+    
+- Sobre el nombre del satélite cordobés ("70/30"), el docente cerró el tema bromeando que, aunque hace alusión a las famosas proporciones del fernet, es una mentira matemática porque en la práctica local se consume con concentraciones de alcohol mucho mayores
 
