@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concurrente_y_paralela/CLASES/TEORICO.md",
+                "file": "Concurrente_y_paralela/CLASES/PRACTICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEORICO"
+              "title": "PRACTICO"
+            }
+          },
+          {
+            "id": "4f8c1dcae127286b",
+            "type": "leaf",
+            "state": {
+              "type": "webviewer",
+              "state": {
+                "url": "https://claude.ai/chat/c0d84f14-bec1-4fc4-8259-06c12b47c4f6",
+                "title": "Fundamentos de hilos en Java - Claude",
+                "mode": "webview"
+              },
+              "icon": "globe-2",
+              "title": "Fundamentos de hilos en Java - Claude"
             }
           }
         ]
@@ -218,9 +232,9 @@
   },
   "active": "76324dcb69c6c8dc",
   "lastOpenFiles": [
+    "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Concurrente_y_paralela/CLASES/TEORICO.md",
     "RedesDeCompu/Clases/TEORICO.md",
-    "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Pasted image 20260830222447.png",
     "RedesDeCompu/Clases/PRACTICO.md",
     "Concurrente_y_paralela/imagenes/Pasted image 20260830191242.png",

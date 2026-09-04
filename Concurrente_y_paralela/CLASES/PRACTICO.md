@@ -640,3 +640,71 @@ Repaso de conceptos de concurrencia en Java: interrupción de hilos (interrupt),
 
 - Se enfatizó la importancia de manejar correctamente interrupciones y excepciones en programas reales para evitar errores visibles y vulnerabilidades (ej.: stack traces en páginas web).
 - Se anunció que en próximas clases se verán handlers de excepciones y mejores prácticas para el manejo global de errores.
+
+
+# Clase del 3 practico
+
+## Overview
+
+La clase práctica se enfocó en los conceptos de programación concurrente, haciendo especial énfasis en la gestión de hilos, el manejo de semáforos y la implementación de secciones críticas. Además, se debatió sobre las diferencias prácticas entre las abstracciones automáticas del lenguaje y el control manual por parte del desarrollador.
+
+## Puntos clave técnicos tratados
+
+- **Semáforos y permisos:** Se discutió el uso de los métodos `acquire` y `release` como herramientas fundamentales para controlar el acceso concurrente a los recursos compartidos.
+    
+- **Secciones críticas:** Se definió la sección crítica como un bloque de código protegido, cuya finalidad principal es garantizar que solo un hilo a la vez pueda ejecutar sus instrucciones, independientemente de la cantidad total de hilos que existan en la aplicación.
+    
+- **Sincronización automática vs. manual:**
+    
+    - Al utilizar la palabra clave `synchronized` en un método, el lenguaje de programación abstrae el control y restringe automáticamente la sección crítica al alcance de dicho método.
+        
+    - Por el contrario, el uso de semáforos otorga mayor libertad: las referencias pueden residir en cualquier hilo y es estricta responsabilidad del programador ubicar correctamente los bloqueos (`acquire`) y las liberaciones (`release`).
+        
+- **Manejo de excepciones:** Se enfatizó la importancia de utilizar estructuras seguras, recomendando colocar siempre la liberación del recurso dentro de un bloque seguro (como un `try-catch-finally`) para evitar bloqueos perpetuos si ocurre una excepción o el hilo falla.
+    
+- **Orden de espera:** Se analizó cómo los hilos que aguardan por un recurso bloqueado forman una cola, priorizando su ejecución en función del tiempo de espera (el orden en el que solicitaron el recurso).
+    
+
+## Ejemplos prácticos revisados en clase
+
+- **Liberación múltiple de permisos:** Se evaluó el escenario teórico donde la ejecución de varios métodos `release` sucesivos genera múltiples permisos nuevos para el semáforo, afectando el acceso concurrente disponible.
+    
+- **Responsabilidad de ubicación de bloqueos:** Se ilustró que, a diferencia de los métodos sincronizados, el desarrollador puede abrir y cerrar las secciones protegidas en puntos de código totalmente distintos según la lógica de negocio.
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- **¿Qué define exactamente a una sección crítica?** — No importa la cantidad total de hilos en el sistema, lo fundamental es que sea un área explícitamente protegida para que solo un hilo la atraviese en un momento dado.
+    
+- **¿Qué diferencia práctica hay entre `synchronized` y los semáforos?** — `Synchronized` limita la sección crítica a la frontera de un método y la controla el lenguaje. Los semáforos son "más libres" y quedan a criterio del programador, obligándolo a diseñar cuidadosamente dónde bloquear y liberar el acceso para no generar errores.
+    
+- **¿Cómo funciona el orden en la cola cuando los hilos esperan?** — Se respeta de manera secuencial; el hilo que lleva más tiempo esperando adquiere el permiso inmediatamente después de que se ejecuta un `release`.
+    
+- **¿Qué pasa si se ejecutan varios `release` repetidos?** — Si se realizan múltiples llamadas a `release` (por ejemplo, tres veces), se incrementa la cantidad de recursos o permisos otorgados por el semáforo.
+    
+
+## Decisiones y acción a seguir
+
+- **Canales de consulta:** Los estudiantes pueden utilizar el correo electrónico del profesor Agustín Miguel Carranza, así como el de los demás docentes, para enviar sus preguntas teóricas o prácticas.
+    
+- **Clases de apoyo:** Se confirmó que continúan disponibles las clases formales de consulta para resolver inconvenientes fuera del horario de cursada.
+    
+
+## Tareas y responsables
+
+- **Profesor (Agustín Miguel Carranza):**
+    
+    - Contestar los correos de los estudiantes, comprometiéndose a responder en lo posible "de un día para el otro".
+        
+- **Alumnos:**
+    
+    - Enviar un recordatorio amistoso ("friendly reminder") por correo si el docente no responde la consulta inicial en el plazo de un día, con el fin de agilizar el seguimiento.
+        
+    - Asumir la responsabilidad técnica de posicionar correctamente los `acquire` y `release` en sus prácticas de concurrencia.
+        
+
+## Observaciones finales
+
+- Al inicio de la transmisión, el profesor Carranza explicó que su ausencia en las clases anteriores se debió exclusivamente a un viaje laboral con su empresa.
+    
+- Reiteró la total apertura de la cátedra para recibir insistencias en las consultas por mail, aclarando que no le molesta que le envíen recordatorios para responder, ya que le sirven para organizar su trabajo.
