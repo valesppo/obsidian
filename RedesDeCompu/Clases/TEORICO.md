@@ -281,3 +281,35 @@ La clase se centró en los fundamentos de la capa física de redes y el concepto
     
 - Sobre el nombre del satélite cordobés ("70/30"), el docente cerró el tema bromeando que, aunque hace alusión a las famosas proporciones del fernet, es una mentira matemática porque en la práctica local se consume con concentraciones de alcohol mucho mayores
 
+# Clase del 7 de sept
+
+### Topología y Geopolítica del Internet Global
+
+- El internet global opera con una topología de estrella centralizada en Estados Unidos, diseñada para forzar el paso del tráfico de los proveedores intercontinentales a través de sus nodos.
+    
+- Este ruteo centralizado se utiliza para permitir el monitoreo masivo de la red por parte de agencias de seguridad.
+    
+- Estados Unidos obliga por ley a sus empresas tecnológicas a exportar hardware y software con "claves débiles", reduciendo artificialmente la efectividad del cifrado para facilitar la intercepción de los datos.
+    
+
+### Diseño Estratégico de Redes LAN Corporativas
+
+- Las redes empresariales modernas aplican topologías de estrella expandida o árbol, estructuradas obligatoriamente en tres niveles: núcleo, distribución y acceso.
+    
+- El núcleo de la red debe utilizar fibra óptica y contar con enlaces mallados redundantes para evitar que los servidores de bases de datos queden aislados ante la rotura de un equipo.
+    
+- Se prohíbe el uso de topologías en cascada porque dividen severamente el ancho de banda en cada salto, un defecto crítico que el profesor ilustró al relatar su experiencia cableando linealmente los edificios de una base antártica.
+    
+
+### Estándares IEEE y Medios de Transmisión
+
+- El estándar IEEE 802.3 define las redes Ethernet por cable (UTP o fibra óptica), mientras que el IEEE 802.11 corresponde a las redes inalámbricas Wi-Fi.
+    
+- Aunque el Wi-Fi ahorra costos de despliegue en la capa de acceso, su rendimiento es deficiente frente al cable de cobre para trabajadores que realizan tareas intensivas, como la edición y transferencia de video.
+    
+
+### Tareas Asignadas a los Estudiantes
+
+- Efectuar la lectura del capítulo del libro sobre arquitectura LAN, prestando especial atención a cómo la capa de enlace de datos se divide en las subcapas LLC y MAC.
+    
+- Estudiar los fundamentos teóricos del enrutamiento estático y comprender las funciones específicas de los conmutadores de capa 3.

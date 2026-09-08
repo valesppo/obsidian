@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concurrente_y_paralela/CLASES/PRACTICO.md",
+                "file": "RedesDeCompu/Clases/TEORICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PRACTICO"
+              "title": "TEORICO"
             }
           },
           {
@@ -112,8 +112,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5,
-    "collapsed": true
+    "width": 274.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -230,12 +229,12 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "76324dcb69c6c8dc",
+  "active": "3a49e698d41ee53d",
   "lastOpenFiles": [
-    "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Concurrente_y_paralela/CLASES/TEORICO.md",
+    "Concurrente_y_paralela/CLASES/PRACTICO.md",
+    "Concurrente_y_paralela/imagenes/Pasted image 20260830222447.png",
     "RedesDeCompu/Clases/TEORICO.md",
-    "Pasted image 20260830222447.png",
     "RedesDeCompu/Clases/PRACTICO.md",
     "Concurrente_y_paralela/imagenes/Pasted image 20260830191242.png",
     "Concurrente_y_paralela/imagenes/Pasted image 20260830191223.png",

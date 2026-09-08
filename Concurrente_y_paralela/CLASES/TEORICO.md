@@ -187,7 +187,7 @@ Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(
 **Automatas NO DETERMINISTAS**
 - Desde un mismo estado y leyendo el mismo simbolo, el automata puede bifurcarse hacia varios estados simultaneamente, o puede no tener nignuna trancicion definida.
 
-![620](../../Pasted%20image%2020260830222447.png)
+![620](../imagenes/Pasted%20image%2020260830222447.png)
 
 **Gramatica:** Se utiliza para generar o describir las reglas de un lenguaje.
 **Automatas:** Mecanismos matematicos que se utilizan para reconocer o evaluar ese lenguaje
