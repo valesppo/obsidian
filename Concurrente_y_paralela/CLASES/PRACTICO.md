@@ -710,6 +710,60 @@ La clase práctica se enfocó en los conceptos de programación concurrente, hac
 - Reiteró la total apertura de la cátedra para recibir insistencias en las consultas por mail, aclarando que no le molesta que le envíen recordatorios para responder, ya que le sirven para organizar su trabajo.
 
 # Clase del 10 sept
+## Overview
+
+Repaso de los resultados del cuestionario sobre concurrencia, seguido de una introducción teórica y práctica a las excepciones controladas y no controladas en Java. Se discutió la implementación de manejadores personalizados para excepciones en hilos y se analizó el problema crítico de los atributos compartidos al reutilizar objetos _Runnable_.
+
+## Puntos clave técnicos tratados
+
+- Se revisaron los resultados del cuestionario inicial, destacando un alto nivel de aciertos en conceptos clave como el uso de _read/write locks_ y la justicia (fairness) en semáforos.
+    
+- Las excepciones en Java se dividen en controladas (checked), que el compilador obliga a capturar, y no controladas (unchecked), cuyo manejo es responsabilidad del programador para garantizar la robustez del sistema.
+    
+- El método _run_ de un hilo tiene una restricción estricta: no admite la cláusula _throws_, por lo que cualquier excepción arrojada debe ser manejada forzosamente de forma interna con un bloque _try/catch_.
+    
+- Si una excepción no controlada estalla y no es manejada, el comportamiento por defecto del hilo es imprimir el _stack trace_ en la consola y finalizar abruptamente el programa.
+    
+- Para un manejo profesional en entornos de producción, Java permite implementar la interfaz _UncaughtExceptionHandler_, la cual se asigna a un hilo específico mediante el método _setUncaughtExceptionHandler_ para ejecutar lógicas de cierre amigables y controladas.
+    
+- Cuando un mismo objeto que implementa _Runnable_ se pasa como argumento a múltiples hilos, sus atributos se vuelven globales para todos ellos, causando problemas de consistencia si alguno modifica los datos.
+    
+- Para solventar la superposición de datos, se adelantó la necesidad de utilizar variables locales de thread, asegurando que cada hilo opere con su propia información aislada.
+    
+
+## Ejemplos prácticos revisados en clase
+
+- Creación de una clase que implementa un _UncaughtExceptionHandler_ personalizado, diseñada para capturar variables de error y el _stack trace_ de la excepción arrojada.
+    
+- Prueba de depuración en el método _main_, donde se instanciaron los hilos y se forzó una excepción arrojando un error de tipo numérico (parseando un texto inválido como entero) para verificar si el programa invocaba correctamente al _handler_.
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- ¿Qué ocurre cuando un hilo hace _acquire_ sobre un semáforo con valor cero? — El hilo queda bloqueado a la espera de que el valor incremente (basado en la métrica del 86% de respuestas correctas del test).
+    
+- ¿Por qué un hilo no puede derivar excepciones a quien lo invocó? — Porque el hilo inicializa una tarea asíncrona totalmente paralela; no tiene lógica que el flujo superior del _stack_ de llamadas original asuma la interrupción.
+    
+
+## Decisiones y acción a seguir
+
+- Herramientas de desarrollo: Se decidió dictar la clase utilizando Visual Studio Code con extensiones de Java en lugar de IntelliJ, con el propósito de simplificar la colocación de _breakpoints_ para congelar y depurar hilos específicos.
+    
+- Distribución de notas: Se determinó que los resultados detallados del cuestionario inicial no se harían públicos en pantalla, sino que serían despachados individualmente.
+    
+
+## Tareas y responsables
+
+- Docentes (Agustín Miguel Carranza y equipo): Enviar por correo institucional las devoluciones privadas con los resultados estadísticos del cuestionario.
+    
+- Alumnos: Revisar su bandeja de entrada para ver el puntaje obtenido y escribirle al profesor por email en caso de que la nota no haya llegado al finalizar la clase.
+    
+
+## Observaciones finales
+
+- El docente expresó gran satisfacción al ver promedios cercanos al 100% en las respuestas, bromeando con la idea de tener que subir la dificultad de la materia para años siguientes.
+    
+- Se enfatizó firmemente que toda la ingeniería detrás de semáforos, bloqueos y manejadores existe con un fin matemático: poder garantizar y demostrar la protección íntegra de los recursos compartidos en sistemas complejos.
 
 ### Herramientas y Evaluación Inicial
 
