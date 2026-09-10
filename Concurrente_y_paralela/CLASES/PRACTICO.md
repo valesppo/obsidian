@@ -708,3 +708,31 @@ La clase práctica se enfocó en los conceptos de programación concurrente, hac
 - Al inicio de la transmisión, el profesor Carranza explicó que su ausencia en las clases anteriores se debió exclusivamente a un viaje laboral con su empresa.
     
 - Reiteró la total apertura de la cátedra para recibir insistencias en las consultas por mail, aclarando que no le molesta que le envíen recordatorios para responder, ya que le sirven para organizar su trabajo.
+
+# Clase del 10 sept
+
+### Herramientas y Evaluación Inicial
+
+- La clase comenzó con la revisión de un cuestionario sobre conceptos de clases anteriores, destacando un alto porcentaje de aciertos en temas como el uso de semáforos, bloqueos de lectura/escritura (read/write locks) y el comportamiento de _acquire_ en semáforos con valor cero.
+    
+- Para la práctica, el profesor indicó que utilizarían Visual Studio Code con extensiones de Java en lugar de IntelliJ, destacando que facilita el "debugging" (depuración) y la colocación de _breakpoints_ al trabajar con hilos.
+    
+
+### Manejo de Excepciones en Hilos
+
+- En Java existen excepciones controladas (checked), donde el compilador obliga a manejarlas con bloques _try-catch_ o firmas _throws_, y excepciones no controladas (unchecked) que dependen de la implementación del programador para hacer el programa tolerante a fallos.
+    
+- El principal desafío al usar hilos es que las excepciones que ocurran dentro del método _run_ de un objeto _Thread_ deben ser tratadas sí o sí de manera interna, ya que no se admite una cláusula _throws_ para derivar el error a un nivel superior en el stack.
+    
+- El comportamiento por defecto de cualquier hilo ante una excepción no manejada es imprimir el _stack trace_ en la consola y finalizar abruptamente el programa.
+    
+- Para lograr una finalización controlada en entornos de producción, Java permite crear una clase que implemente un _UncaughtExceptionHandler_ y asignarlo al hilo mediante el método _setUncaughtExceptionHandler_, permitiendo así personalizar la lógica ante errores imprevistos.
+    
+
+### Recursos Compartidos y Variables Locales de Thread
+
+- Se planteó un problema común de concurrencia: si se crea un único objeto que implementa la interfaz _Runnable_ y se le pasa como argumento a múltiples hilos, todos esos hilos compartirán los mismos atributos de dicho objeto.
+    
+- Esta situación genera problemas de consistencia, ya que si un hilo modifica un atributo compartido, irremediablemente afectará el estado de los demás hilos en ejecución.
+    
+- Para solucionar este conflicto cuando se necesita un atributo que no deba ser compartido, Java provee un mecanismo conocido como variables locales de thread (_ThreadLocal_), asegurando la independencia de los datos.
