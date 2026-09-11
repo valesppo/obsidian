@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Concurrente_y_paralela/CLASES/PRACTICO.md",
+                "file": "RedesDeCompu/Clases/PRACTICO.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "PRACTICO"
-            }
-          },
-          {
-            "id": "4f8c1dcae127286b",
-            "type": "leaf",
-            "state": {
-              "type": "webviewer",
-              "state": {
-                "url": "https://claude.ai/chat/c0d84f14-bec1-4fc4-8259-06c12b47c4f6",
-                "title": "Fundamentos de hilos en Java - Claude",
-                "mode": "webview"
-              },
-              "icon": "globe-2",
-              "title": "Fundamentos de hilos en Java - Claude"
             }
           }
         ]
@@ -232,8 +218,16 @@
   "active": "76324dcb69c6c8dc",
   "lastOpenFiles": [
     "RedesDeCompu/Clases/TEORICO.md",
-    "Concurrente_y_paralela/CLASES/TEORICO.md",
+    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
+    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
+    "ALGORITMOS/Ejercicios/repaso.md",
+    "ALGORITMOS/Ejercicios/RECURSION.md",
+    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
+    "ALGORITMOS/Ejercicios/GRAFOS.md",
+    "ALGORITMOS/Ejercicios/FINAL.md",
+    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
     "Concurrente_y_paralela/CLASES/PRACTICO.md",
+    "Concurrente_y_paralela/CLASES/TEORICO.md",
     "Concurrente_y_paralela/imagenes/Pasted image 20260830222447.png",
     "RedesDeCompu/Clases/PRACTICO.md",
     "Concurrente_y_paralela/imagenes/Pasted image 20260830191242.png",
@@ -249,14 +243,7 @@
     "RedesDeCompu/imagenes/Pasted image 20260821113822.png",
     "Sin título.md",
     "Pasted image 20260820150959.png",
-    "ALGORITMOS/Ejercicios/ABB - arboles (del aula virtual).md",
-    "ALGORITMOS/Ejercicios/PRIMER PARCIAL.md",
-    "ALGORITMOS/Ejercicios/repaso.md",
-    "ALGORITMOS/Ejercicios/GRAFOS.md",
-    "ALGORITMOS/Ejercicios/FINAL.md",
     "Concurrente_y_paralela/imagenes",
-    "ALGORITMOS/Teorico ayed/TEORICO segundo parcial ayed.md",
-    "ALGORITMOS/Teorico ayed/TEORICO PRIMER PARCIAL.md",
     "==**GRAFOS**==.md",
     "ejercicios.md",
     "Concurrente_y_paralela/CLASES",
@@ -274,7 +261,6 @@
     "Avanzada/nose.md",
     "Avanzada/Teorico.md",
     "ALGORITMOS/Ejercicios/variaciones.md",
-    "ALGORITMOS/Ejercicios/RECURSION.md",
     "ALGORITMOS/PRACTICA PRIMER PARCIAL.md",
     "conflict-files-obsidian-git.md"
   ]
