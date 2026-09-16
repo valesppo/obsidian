@@ -76,3 +76,6 @@ Repaso de conceptos fundamentales sobre redes de área local (LAN) y su evoluci�
 - Es altamente recomendable utilizar VLANs con números distintos a 1 (asignada por defecto a todo) y evitar los extremos 0 y 4095 para prevenir problemas de configuración.
     
 - Para enriquecer visualmente el modelo práctico en Packet Tracer, se sugirió cargar una imagen física de un avión como fondo y posicionar las computadoras en los asientos correspondientes.
+
+
+

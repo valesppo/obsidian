@@ -303,3 +303,177 @@ La clase introdujo los fundamentos teóricos y prácticos de las Redes de Petri,
 
 - El docente enfatizó que el máximo "poder" de las Redes de Petri es su capacidad visual e inmediata para exponer problemas severos de arquitectura de software, detectando fugas de hilos (_thread leaks_) o cuellos de botella en secciones críticas mucho antes de escribir el código fuente final.
 
+# Clase del 10 sept
+
+# Overview
+
+Repaso de conceptos de sincronización y concurrencia: funcionamiento de semáforos, Redes de Petri Coloreadas, Arcos Inhibidores y la resolución del problema del Lector-Escritor. Además, se debatió sobre la organización y las fechas tentativas para el próximo examen parcial.
+
+## Puntos clave técnicos tratados
+
+- Semáforos
+    
+    - Fueron introducidos por Dijkstra como mecanismos para sincronizar programas con múltiples unidades de ejecución y recursos compartidos.
+        
+    - Su estructura se compone de un contador (que puede ser binario o de múltiples valores) y una cola de espera.
+        
+    - El manejo de la cola sigue el principio de _fairness_ (justicia): el hilo que lleva más tiempo esperando es el primero en ingresar al liberarse el recurso.
+        
+- Redes de Petri Coloreadas
+    
+    - Son una extensión del modelo clásico donde los tokens poseen información adicional (colores), haciéndolos distinguibles entre sí.
+        
+    - Es obligatorio definir previamente los colores y asignar funciones específicas a cada transición para determinar qué tipo de token ingresa y cuál sale.
+        
+- Arcos Inhibidores
+    
+    - A diferencia del arco común, el arco inhibidor exige estrictamente que no haya tokens en la plaza para sensibilizar la transición.
+        
+    - Si existe al menos un token en la plaza conectada, la transición se desensibiliza automáticamente.
+        
+    - No pueden modelarse con la ecuación de estado estándar (matrices de unos y ceros); requieren el uso de la "ecuación fundamental extendida".
+        
+    - Son ideales para establecer prioridades, pero su uso incorrecto con restricciones mutuamente excluyentes puede provocar bloqueos permanentes.
+        
+- Problema del Lector-Escritor
+    
+    - Modela el acceso a datos donde múltiples lectores pueden leer simultáneamente, pero un escritor requiere acceso exclusivo para evitar inconsistencias.
+        
+    - En Redes de Petri, se resuelve usando pesos en los arcos. Por ejemplo, con una capacidad total de 10 tokens: cada lector consume 1 token al entrar, mientras que el escritor debe consumir los 10 simultáneamente para asegurarse la exclusividad.
+        
+
+## Ejemplos prácticos revisados en clase
+
+- Paso de ambulancias (Arcos Inhibidores): Se utilizó el ejemplo del paso de una ambulancia en un puente para ilustrar cómo los arcos inhibidores pueden forzar prioridades en un sistema concurrente.
+    
+- Acceso a datos (Lector-Escritor): Se demostró la gestión de accesos mediante la asignación de pesos a los arcos (1 token para leer vs. capacidad total de tokens para escribir).
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- ¿Qué ocurre matemáticamente con los arcos inhibidores? — No se pueden representar con la matriz clásica de incidencia (unos y ceros); obligan a cambiar el modelo matemático hacia la ecuación fundamental extendida.
+    
+- ¿Qué riesgo traen los arcos inhibidores? — Si se configuran restricciones mutuamente excluyentes de forma errónea, pueden generar bloqueos (_deadlocks_) en el sistema.
+    
+- ¿Cómo se garantiza la justicia en los semáforos? — A través de la cola de espera, respetando estrictamente el orden de llegada (FIFO) al momento de asignar el recurso liberado.
+    
+
+## Decisiones y acción a seguir
+
+- Parcial y logística:
+    
+    - El profesor planteó debatir la fecha exacta del examen parcial.
+        
+    - Se propuso una votación en clase para elegir entre los días 22 y 29 de septiembre.
+        
+
+## Tareas y responsables
+
+- Profesor
+    
+    - Coordinar, contabilizar la votación y definir la fecha definitiva del parcial (22 o 29 de septiembre).
+        
+- Alumnos
+    
+    - Participar en la votación para elegir la fecha del examen.
+        
+    - Repasar los conceptos teóricos y matemáticos (especialmente el uso de la ecuación extendida y los riesgos de bloqueo).
+        
+
+## Observaciones finales
+
+- Se enfatizó prestar especial atención al diseño lógico al utilizar arcos inhibidores, ya que son propensos a introducir errores graves si no se analizan cuidadosamente las prioridades.
+
+
+
+# Clase del 15
+RdP quasi viva puede salir en coloquio
+Grado de habilitado o grado sensibilitado puede salir en el coloquio
+repasar obligatoriamente: conflictos, grado de sensibilisado, red de barberia, invariantes, ecuacion fundamental de rdp, matriz de incidencia,
+
+# Overview
+
+Repaso y cierre del tema Redes de Petri, enfocándose en las propiedades del sistema que dependen de su estructura y marcado: estados de casa, grados de sensibilizado y una clasificación profunda de los tipos de conflictos (estructural, efectivo y general). Además, se finalizó la votación logística y se definieron las reglas, formato y fecha exacta del primer examen parcial.
+
+## Puntos clave técnicos tratados
+
+- Dependencia de las propiedades de la red
+    
+    - Se enfatizó que las propiedades de una red de Petri dependen fundamentalmente de dos cosas en conjunto: la estructura de la red y su marca (los tokens).
+        
+- Deadlock (Bloqueo de muerte)
+    
+    - Se aclaró que el _deadlock_ no es un concepto exclusivo de las Redes de Petri, sino un problema general de programación concurrente donde los hilos quedan bloqueados al competir por recursos. Las redes son solo un formalismo matemático para entenderlo.
+        
+- Home State (Estado de Casa)
+    
+    - Es un estado al cual la red siempre puede volver, sin importar qué secuencia de eventos o disparos haya ocurrido previamente.
+        
+    - Si el "Home State" coincide con el estado inicial de la red, significa que el sistema puede reiniciarse o volver a fojas cero haga lo que haga.
+        
+- Tipos de Conflictos en Redes de Petri
+    
+    - **Conflicto Estructural:** Se analiza observando puramente la estructura (las conexiones de plazas y transiciones) sin importar los tokens. Ocurre cuando una misma plaza alimenta a múltiples transiciones.
+        
+    - **Conflicto Efectivo:** Ocurre cuando, habiendo un conflicto estructural, la cantidad de tokens disponibles es menor que la suma de los pesos de los arcos, por lo que disparar una transición desensibiliza inevitablemente a la otra.
+        
+    - **Conflicto General:** Sucede cuando la cantidad de tokens no permite disparar todas las transiciones simultáneamente de acuerdo a su máximo "grado de sensibilizado" individual.
+        
+- Grado de Sensibilizado
+    
+    - Es la cantidad de veces que una transición específica puede ser disparada de manera individual con la cantidad de tokens presentes en ese momento exacto.
+        
+- Persistencia y Semántica de Ejecución
+    
+    - **Red Persistente:** Es aquella donde las transiciones sensibilizadas solo pueden deshabilitarse por su propio disparo (es decir, no sufren conflictos efectivos).
+        
+    - **Semántica de Servidor Único:** Para el análisis en la materia, no interesan los disparos múltiples o simultáneos; cada paso de la red dispara una y solo una transición a la vez.
+        
+
+## Ejemplos prácticos revisados en clase
+
+- Análisis de Subredes: El profesor utilizó ejemplos visuales en diagramas de Petri borrando y aislando partes de la red (ej. analizando solo T4, T5 y T6) para demostrar cómo la existencia de un conflicto general depende de qué sector específico de la estructura se esté observando.
+    
+- El Problema de la Barbería: Se mencionó como un ejemplo clásico para modelar concurrencia con Redes de Petri, representando una puerta de entrada, una sala de espera, cajas, salidas y la gestión de recursos mediante procesos activos (los barberos).
+    
+
+## Preguntas y clarificaciones destacadas (con respuestas)
+
+- ¿Qué fecha ganó en la votación para el parcial? — El examen será el martes 29 de septiembre, ya que la mayoría consideró que el 22 quedaba muy ajustado.
+    
+- ¿Cuánto dura el parcial y cuál es el formato? — Durará aproximadamente 50 minutos y constará de 10 preguntas de respuestas muy puntuales (1 o 2 renglones). No es _multiple choice_, pero tampoco exige desarrollar largos párrafos; el profesor advirtió que no intenten "vender humo" escribiendo textos largos si no saben la respuesta.
+    
+- ¿Se evalúa escritura de código en el parcial teórico? — No, no se pedirá desarrollar funciones ni programar; esos conocimientos se evalúan en los trabajos prácticos. Sin embargo, sí ingresan los conceptos teóricos vistos en el práctico.
+    
+- ¿Se va a usar el software de vigilancia Respondus para el examen? — No, debido a su naturaleza invasiva (graba cámara, micrófono y bloquea la PC), pero el examen será presencial a través de la plataforma LED y el docente supervisará para evitar que hagan capturas de pantalla o trampas.
+    
+- ¿Podemos usar nuestras propias notebooks? — Sí, el profesor lo recomendó explícitamente ya que las computadoras del laboratorio son lentas o pesadas.
+    
+
+## Decisiones y acción a seguir
+
+- Dinámica de la clase: Para optimizar la atención, el profesor adoptó la modalidad de hacer un _break_ de 10 minutos a mitad de la clase, dividiendo la carga teórica pesada.
+    
+- Límite de temas: Se decidió formalmente que el contenido para el primer parcial cierra con lo visto en esta clase sobre Redes de Petri.
+    
+
+## Tareas y responsables
+
+- Profesor (Luis Orlando Ventre)
+    
+    - Hablar y coordinar con los profesores del práctico sobre el espacio físico para rendir el examen, ya que probablemente deba hacerse en dos tandas debido a la gran cantidad de alumnos.
+        
+    - Corregir de forma manual los exámenes (aclaró que tomará un par de semanas procesar 10 preguntas para más de 100 alumnos).
+        
+- Alumnos
+    
+    - Presentarse el martes 29 a rendir de forma presencial.
+        
+    - Estudiar de forma sostenida para no caer en la procrastinación, y evitar respuestas adornadas de 25 renglones en el examen.
+        
+
+## Observaciones finales
+
+- El profesor se tomó varios minutos para hacer una reflexión ética y psicológica sobre el fraude académico, instando a los alumnos a no buscar el camino fácil ni hacer trampa, porque a la larga perjudica la formación profesional de un ingeniero.
+    
+- Dio un consejo extra-académico muy marcado a la clase: recomendó fuertemente estudiar inglés, asegurando que abre un panorama profesional infinitamente más amplio.
