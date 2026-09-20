@@ -790,3 +790,17 @@ Repaso de los resultados del cuestionario sobre concurrencia, seguido de una int
 - Esta situación genera problemas de consistencia, ya que si un hilo modifica un atributo compartido, irremediablemente afectará el estado de los demás hilos en ejecución.
     
 - Para solucionar este conflicto cuando se necesita un atributo que no deba ser compartido, Java provee un mecanismo conocido como variables locales de thread (_ThreadLocal_), asegurando la independencia de los datos.
+
+
+# Clase del 17
+Thread factory y executors
+el patron factory permite crear familias de objetos. Centraliza la creacion de objetos
+el factory tiene que conocer todos los objetos 
+(Ver como hacer thread safe a funciones)
+
+Executors:
+La idea es abstraernos mas de los hilos,
+es importante finalizar los executors. Si no tiene tareas, seguira esperando el envio de nuevas.
+
+
+

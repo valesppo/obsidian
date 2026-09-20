@@ -327,7 +327,7 @@ Tenemos que L_dB = 10log(Pt/Pr), dado que la potencia recibida es la cuarta part
 15)
 En la Sección 4.3 se afirma que si no hay obstáculos intermedios, la trayectoria visual óptica se puede expresar como d = 3,75 h, donde d es la distancia entre la antena y el horizonte, en kilómetros, y h es la altura de la antena, en metros. Teniendo en cuenta que el radio de la Tierra es 6.370 km, obtenga la expresión anterior. Sugerencia: supóngase que la antena es perpendicular a la superficie terrestre y nótese que la recta que une el punto más alto de la antena y el horizonte es la tangente a la superficie terrestre en el horizonte. Para visuali- zar más claramente el problema, dibuje un gráfico con la antena, la trayectoria visual y elradio de la Tierra.
 
-![690](../../Pasted%20image%2020260913140220.png)
+![690](../../../Pasted%20image%2020260913140220.png)
 Una vez hecho el esquma del problema nos damos cuenta que tenemos un triangulo rectangulo en donde: Cateto1: El radio de la tierra (R), Cateto2: Distancia visual que queremos calcular (d) y la Hipotenusa: Radio de la tierra mas la altura de la antena (R+h).
 Con lo cual podemos aplicar pitagoras:
 (R + h)² = R² + d²
