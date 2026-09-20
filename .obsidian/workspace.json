@@ -22,6 +22,30 @@
             }
           },
           {
+            "id": "0b97827d5ced588c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "RedesDeCompu/imagenes/Pasted image 20260913140220.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260913140220"
+            }
+          },
+          {
+            "id": "c47fb1061cf7c9f3",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "RedesDeCompu/imagenes/Pasted image 20260913140220.png"
+              },
+              "icon": "lucide-image",
+              "title": "Pasted image 20260913140220"
+            }
+          },
+          {
             "id": "bd9c350100deea8c",
             "type": "leaf",
             "state": {
@@ -35,7 +59,8 @@
               "title": "Fundamentos de hilos en Java - Claude"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -112,8 +137,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5,
-    "collapsed": true
+    "width": 274.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -230,20 +254,20 @@
       "obsidian-statusbar-pomo:Start pomodoro": false
     }
   },
-  "active": "76324dcb69c6c8dc",
+  "active": "f1f731b4b67c5a2c",
   "lastOpenFiles": [
-    "Pasted image 20260919225310.png",
-    "Pasted image 20260919224528.png",
-    "Pasted image 20260919224431.png",
-    "Pasted image 20260919224247.png",
-    "Pasted image 20260919222352.png",
-    "Pasted image 20260919222232.png",
-    "Pasted image 20260919221924.png",
-    "Pasted image 20260919221552.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919172914.png",
+    "RedesDeCompu/imagenes/Pasted image 20260913140220.png",
     "RedesDeCompu/Clases/PRACTICO.md",
-    "Pasted image 20260919204755.png",
-    "Pasted image 20260919204701.png",
-    "Pasted image 20260919204415.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919225310.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919224528.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919224431.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919224247.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919222352.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919222232.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919221924.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919221552.png",
+    "RedesDeCompu/imagenes/Pasted image 20260919204755.png",
     "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Concurrente_y_paralela/CLASES/TEORICO.md",
     "RedesDeCompu/Clases/TEORICO.md",
