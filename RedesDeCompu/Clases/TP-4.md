@@ -1,88 +1,3 @@
-![](../imagenes/Pasted%20image%2020260813190810.png)
-formula del efecto doppler
-
-
-nosotros podemos mandar una  serie de bits asi 010100101000101001000 y pueden ser infinitos, pero nosotros solo quisimos mandar 8bits, para eso se crean los protocolos que sirven para tener un bit de inicio y un bit final
-
-
-ultimo ejercicio 
-![](../imagenes/Pasted%20image%2020260813194851.png)
-
-
-# Clase practica del 20
-vimos protocolos TCP, UDP, QUIC, MATT, SSH, FTP, HTTP
-
-# Clase del 27
-presento el TP3 y se entrega el 
-
-usamos udp par ahacer transmisiones de videos o cosas asi ya que puede habre perdida de paquetes
-y perdemos paquetes porque cuando mando paquetes a una direccion, no puedo saber la capacidad de ese canal, o sea que saturo el canal y pierdo los paquetes
-
-# Clase del 10 sept
-
-## Overview
-
-Repaso de conceptos fundamentales sobre redes de área local (LAN) y su evolución en tamaño (MAN, WAN), junto con la configuración práctica en Packet Tracer. La clase se centró fuertemente en el entendimiento y configuración de Redes de Área Local Virtuales (VLANs), el funcionamiento de máscaras de subred, puertas de enlace predeterminadas (default gateways), y el uso del software de simulación para modelar casos de uso de la vida real.
-
-## Puntos clave técnicos tratados
-
-- Las redes se clasifican por su tamaño geográfico, escalando de LAN a CAN, MAN y finalmente WAN, siendo esta última la internet misma.
-    
-- La máscara de subred utiliza una operación lógica para determinar si una dirección IP de destino se encuentra dentro de la misma red local o si el paquete debe ser derivado hacia afuera a través del enrutador.
-    
-- El "Default Gateway" es la dirección IP del enrutador de salida por el cual un dispositivo enviará el tráfico destinado a redes externas.
-    
-- Los servidores DNS se encargan de traducir nombres de dominio en strings legibles a direcciones IP, simplificando la memorización para los usuarios.
-    
-- Las VLANs permiten dividir lógicamente un único switch físico en múltiples redes virtuales aisladas, ahorrando los costos de adquirir hardware adicional.
-    
-- El protocolo 802.1Q modifica el paquete agregando una etiqueta (tag) de 32 bits, la cual incluye un identificador de VLAN de 12 bits que soporta la creación de hasta 4000 redes virtuales en un switch.
-    
-- Los switches pueden realizar comunicaciones "unicast" (dirigidas a un solo dispositivo) o "broadcast" (dirigidas a todos los dispositivos en la misma VLAN para, por ejemplo, averiguar quién posee una IP específica).
-    
-
-## Ejemplos prácticos revisados en clase
-
-- Conexión simulada en Packet Tracer utilizando un cable de consola desde una laptop al puerto serie del switch, accediendo mediante la terminal para ejecutar comandos de configuración de administrador (`enable`, cambio de nombre, contraseñas, asignación de puertos).
-    
-- Simulación de la red interna de un avión: división en distintas clases de pasajeros mediante VLANs para asignar privilegios y servicios específicos.
-    
-- Creación de un servidor HTTP en la red del avión para proveer una página HTML de entretenimiento a bordo, limitando el acceso a internet únicamente a la primera clase y a los administradores del sistema.
-    
-
-## Preguntas y clarificaciones destacadas (con respuestas)
-
-- ¿Las computadoras de la red necesitan conocer a qué VLAN pertenecen? — No, a las computadoras no les interesa la etiqueta VLAN; el etiquetado del puerto es un trabajo de segmentación que se realiza por software íntegramente en el switch.
-    
-- ¿Qué ocurre si una computadora tiene más de una interfaz de red? — Se puede configurar cuál de las interfaces actuará como el "Default Gateway" principal para tratar de enrutar la salida a internet.
-    
-
-## Decisiones y acción a seguir
-
-- Metodología de calificación de trabajos prácticos: El docente parte de una nota de 10, restando puntos por mala organización en repositorios compartidos (commits únicos masivos, un solo miembro aportando) y sumando puntos por creatividad y reflexión propia.
-    
-- El servidor montado por el profesor para las pruebas de los alumnos se dará de baja la próxima semana para frenar el consumo en su tarjeta de crédito personal.
-    
-
-## Tareas y responsables
-
-- Profesor (Santiago Martin Henn): Enviar un correo electrónico avisando sobre la inminente baja del servidor y continuar cargando las calificaciones del laboratorio número uno para quienes ya entregaron.
-    
-- Alumnos: Apurar la interacción y terminar las pruebas en el servidor antes de que sea apagado, además de resolver el ejercicio del avión en Packet Tracer aplicando los comandos compartidos.
-    
-
-## Observaciones finales
-
-- Es altamente recomendable utilizar VLANs con números distintos a 1 (asignada por defecto a todo) y evitar los extremos 0 y 4095 para prevenir problemas de configuración.
-    
-- Para enriquecer visualmente el modelo práctico en Packet Tracer, se sugirió cargar una imagen física de un avión como fondo y posicionar las computadoras en los asientos correspondientes.
-
-
-
-
-
-# TP 4
-
 
 1)
 **a) 
@@ -116,30 +31,23 @@ El Tagging es el proceso mediante el cual un switch inserta una marca digital (l
 - **Resolución:** Una vez que el switch de destino lee esta etiqueta, la recorta para devolver el paquete a su estado original y lo entrega únicamente a los puertos que pertenecen a esa VLAN específica, garantizando el aislamiento.
 
 2)
-![](../imagenes/Pasted%20image%2020260919172914.png)
+
+![697](../imagenes/Pasted%20image%2020260919172914.png)
 
 Primero hay que entender que el sistema operativo de cisco se divide en niveles de acceso, cada uno con mas permisos que el anterior. El modo Usuario (>) solo permite ver informacion basica, mientras que el Privilegiado (#) permite ver toda la configuracion y el modo Global ( (config)# ) permite modificar los parametros de funcionamiento del equipo
 
 Para configurar la tabla de ruteo que nos dieron, en cada pc abrimos la configuracion de IP y ahi reemplazamos con los datos dados
 
-a)​ Desde cada computadora, ingresar a la terminal y configurar los switch. Nombrar a los mismos sw1 y sw2 respectivamente. Ayuda: investigar los comandos necesarios online si no te acordás, por ejemplo, para cambiar el nombre del switch:​
+a)​ Desde cada computadora, ingresar a la terminal y configurar los switch. Nombrar a los mismos sw1 y sw2 respectivamente.
 
 Para la PC-A
 ![](../imagenes/Pasted%20image%2020260919173822.png)
+
 Para la PC-B
 ![](../imagenes/Pasted%20image%2020260919173929.png)
 
-b)​ Asignar contraseñas privilegiadas, de consola y vty. Ayuda:​
-​
-	enable secret contrasena_exec
-	line console 0
-	password contrasena_consola
-	login
-	exit
-	line vty 0 15
-	password contrasena_vty
-	login
-	exit
+b)​ Asignar contraseñas privilegiadas, de consola y vty. 
+
 Las líneas **VTY** (del inglés _Virtual Teletype_ o **Teletipo Virtual**) son **interfaces de línea de comando (CLI) lógicas y virtuales** en dispositivos de red como enrutadores y switches, utilizadas para la **administración remota** mediante protocolos como **Telnet** o **SSH**.
 
 Para la PC-A
@@ -150,15 +58,12 @@ Para la PC-B
 
 
 c)​ Encriptar las contraseñas (Ayuda: utilizar service password-encryption)
+
 Para PC-B
 ![](../imagenes/Pasted%20image%2020260919175411.png)
 
-d)​ Configurar las redes VLAN para ambos switch según la tabla de direcciones provista. Ayuda:​
-​
-	interface vlan 1
-	ip address <IP_address> <subnet_mask>
-	no shutdown
-	exit​
+d)​ Configurar las redes VLAN para ambos switch según la tabla de direcciones provista. 
+
 Para PC-A , SW1
 ![](../imagenes/Pasted%20image%2020260919202647.png)
 
@@ -168,18 +73,19 @@ Para PC-B , SW2
 e)​ Desconectar todas las interfaces que no estén siendo utilizadas (Ayuda: podés ver las interfaces utilizando show ip interface brief)
 
 PC-A antes de desconectar las interfaces no usadas
-![](../imagenes/Pasted%20image%2020260919203232.png)
+![457](../imagenes/Pasted%20image%2020260919203232.png)
+
 Desconectamos en un rango 
-![](../imagenes/Pasted%20image%2020260919203545.png)
+![477](../imagenes/Pasted%20image%2020260919203545.png)
 
 Luego queda
-![](../imagenes/Pasted%20image%2020260919203607.png)
+![468](../imagenes/Pasted%20image%2020260919203607.png)
 
 PC-B antes de desconectar
-![](../imagenes/Pasted%20image%2020260919203739.png)
+![473](../imagenes/Pasted%20image%2020260919203739.png)
 
 Despues de desconectar
-![](../imagenes/Pasted%20image%2020260919203916.png)
+![496](../imagenes/Pasted%20image%2020260919203916.png)
 
 
 f)​ Guardar la configuración (write memory)
@@ -196,15 +102,8 @@ Ping de PC-A hacia PC-B
 
 Ping de PC-B hacia PC-A
 ![](../imagenes/Pasted%20image%2020260919204415.png)
-h)​ Crear VLANs en ambos switches. Ayuda:
-	sw1(config)# vlan 10 ​
-	sw1(config-vlan)# name Laboratorio
-	sw1(config-vlan)# vlan 20
-	sw1(config-vlan)# name Bar
-	sw1(config-vlan)# vlan 99
-	sw1(config-vlan)# name Management
-	sw1(config-vlan)# end
-	2Trabajo Práctico N°4
+
+h)​ Crear VLANs en ambos switches.
 
 PC-A
 ![](../imagenes/Pasted%20image%2020260919204701.png)
@@ -219,24 +118,17 @@ PC-A
 La respuesta es la **VLAN 1** lleva el nombre `default` y es la que agrupa absolutamente todos los puertos físicos del switch de fábrica (desde el Fa0/1 hasta el Gig0/2).
 
 
-j)​ Asignar la PC-A a la VLAN Laboratorio. Ayuda:
-	sw1(config)# interface f0/6
-	sw1(config-if)# switchport mode access
-	sw1(config-if)# switchport access vlan 10
-![](../imagenes/Pasted%20image%2020260919221924.png)
+j)​ Asignar la PC-A a la VLAN Laboratorio.
 
-k)​ Desde la VLAN 1, remover la ip de Management y configurarla para funcionar en la VLAN 99 
-	sw1(config)# interface vlan 1
-	sw1(config-if)# no ip address
-	sw1(config-if)# interface vlan 99
-	sw1(config-if)# ip address IP MASCARA
-	sw1(config-if)# end
+![572](../imagenes/Pasted%20image%2020260919221924.png)
+
+k)​ Desde la VLAN 1, remover la ip de Management y configurarla para funcionar en la VLAN 99
 	
 ![](../imagenes/Pasted%20image%2020260919222232.png)
 
 l)​ Verificar el estado de la VLAN utilizando show vlan brief y el estado de las interfaces
 utilizando show ip interface brief. Colocar los output en el informe e interpretar.
-![](../imagenes/Pasted%20image%2020260919222352.png)
+![444](../imagenes/Pasted%20image%2020260919222352.png)
 En el primer output vemos que el puerto F0/6 ya no esta en VLAN 1, si no que aparece en VLAN 10 (laboratorio).
 En el segundo ouput me olvide de sacar captura a la parte de abajo donde dice "More" pero si aparecia que la interfaz vlan1 ya no tiene una ip asignada, mientras que la vlan99 tiene la ip 192.168.1.11 y su estado dice up
 
@@ -257,39 +149,39 @@ El resultado exitoso del comando ping demuestra que existe conectividad de extre
 
 3)
 Vamos a simular una red LAN a bordo de una aeronave segmentada en tres clases (Turista, Business y Administracion), utilizando tecnicas de enrutamiento inter-VLAN y configuraciones de VLANs, NAT para la salida del internet y listas de control de acceso para la seguridad (ACL).
-![](../imagenes/Pasted%20image%2020260925000103.png)
+![538](../imagenes/Pasted%20image%2020260925000103.png)
 
 **CONFIGURACION DEL SWITCH 1**
 Aca creamos las VLANs 10, 20 y 99 en el switch central con sus respectivos puertos.
-![](../imagenes/Pasted%20image%2020260924235823.png)
+![432](../imagenes/Pasted%20image%2020260924235823.png)
 
 **CONFIGURACION DEL ROUTER AVION**
 Se configuró el dispositivo principal implementando enrutamiento Inter-VLAN (Router-on-a-Stick) con subinterfaces y encapsulación 802.1Q para segmentar las redes Turista, Business y Administración. Para proveer conectividad a Internet, se estableció una ruta estática hacia el ISP y se activó NAT con sobrecarga (PAT) en la interfaz externa. Finalmente, se aseguró la red aplicando una Lista de Control de Acceso (ACL) en la subinterfaz Turista, restringiendo su comunicación exclusivamente al servidor local y bloqueando cualquier otro destino.
-![](../imagenes/Pasted%20image%2020260924235731.png)
+![494](../imagenes/Pasted%20image%2020260924235731.png)
 
 
 CONFIGURACION ROUTER ISP
 Se configuró el Router ISP inicializando y direccionando sus interfaces físicas. Se asignó la dirección IP `200.0.0.2` (máscara /30) a la interfaz `g0/1` para establecer el enlace WAN directo con el router de la aeronave. Posteriormente, se configuró la interfaz `g0/0` con la IP `8.8.8.1` (máscara /24) para dar conectividad a la red que simula Internet, activando ambos puertos exitosamente mediante el comando no shutdown.
-![](../imagenes/Pasted%20image%2020260924235927.png)
+![517](../imagenes/Pasted%20image%2020260924235927.png)
 
 ping desde turista hacia el server entretenimiento 
 
 ![](../imagenes/Pasted%20image%2020260925000758.png)
 
-![](../imagenes/Pasted%20image%2020260925001307.png)
+![504](../imagenes/Pasted%20image%2020260925001307.png)
 
 
 No nos deja hacer ping, justo lo que queriamos (pc turista)
 ![](../imagenes/Pasted%20image%2020260925001356.png)
 
 Desde pc businees
-![](../imagenes/Pasted%20image%2020260925001911.png)
+![513](../imagenes/Pasted%20image%2020260925001911.png)
 
 ping a internet desde business
 ![](../imagenes/Pasted%20image%2020260925002041.png)
 
 Tuve que cambiar la configuracion del router avion porque no habia ping entre pc admin y las demas
-![](../imagenes/Pasted%20image%2020260925002756.png)
+![498](../imagenes/Pasted%20image%2020260925002756.png)
 
 ping desde admin hacia las otras PCs e internet
-![](../imagenes/Pasted%20image%2020260925002933.png)
+![317](../imagenes/Pasted%20image%2020260925002933.png)

@@ -7,7 +7,7 @@ que es el interleaving (pregunta de coloquio)
 Es la capacidad de un sistema para gestionar varias tareas que avanzan de manera entretejida. No implica que se ejecuten al mismo tiempo; significa que el diseño permite alternar entre ellas de forma segura. Sistemas operativos, bucles de eventos y servidores de peticiones son ejemplos tipicos: coordinan recursos, deciden que tarea sigue y mantienen la coherencia del estado compartido.
 
 **PARALELISMO:**
-El paralelismo se cenra en ejecutar tareas simultaneas usando multiples unidades de ejecucion. Puede ocurrir en diferentes niveles: varios nucleos de CPU, instrucciones vectoriales (SIMD) o calculo masivo en GPU. El objetivo es acelerar un trabajo dividiendolo en partes que puedan resolverse al mismo tiempo sin bloquearse entre si.
+El paralelismo se centra en ejecutar tareas simultaneas usando multiples unidades de ejecucion. Puede ocurrir en diferentes niveles: varios nucleos de CPU, instrucciones vectoriales (SIMD) o calculo masivo en GPU. El objetivo es acelerar un trabajo dividiendolo en partes que puedan resolverse al mismo tiempo sin bloquearse entre si.
 
 **¿Porque no son lo mismo?**
 La concurrencia es un **modelo de organización**; el paralelismo es un **modelo de ejecución**. Un programa puede estar diseñado para manejar muchas solicitudes sin que ninguna se bloquee (concurrencia), aun cuando un solo núcleo las ejecute en turnos. A la inversa, una tarea de ciencia de datos puede dividirse en partes independientes y ejecutarse en distintos núcleos (paralelismo) sin necesidad de coordinar interacciones complejas entre ellas.
@@ -163,7 +163,7 @@ Son grafos dirigidos en el que cada nodo corresponde a un estado y cada transici
 Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(evento, estadoActual) -> estadoSiguiente**
 
  **Maquina de mealy:** La salida esta expresada en los arco junto al evento, la salida depende del estado y de donde se viene
-- ![318](../imagenes/Pasted%20image%2020260830191143.png)
+- ![490](../imagenes/Pasted%20image%2020260830191143.png)
 - ![](../imagenes/Pasted%20image%2020260830191223.png)
 - Las maquinas de mealy reaccionan mas rapido a las entradas ya que reaccionan en el mismo ciclo, no esperan el reloj
 - Las maquinas de mealy tienen menos estados, diferentes salidas en arcos (n²) en lugar de estados (n)
@@ -196,32 +196,9 @@ Por el cual, una relacion donde para cada par se obtiene el siguiente estado **(
 **Gramaticas tipo 2 (Automata asociado)**: Automata linealmente acotado, son similares a una maquina de turing pero con memoria mas restringida
 **Gramaticas tipo 0 (Automata asociado)**: Maquinas de turing, representan el nivel maximo del poder de la computacion, generando lenguajes recursivamente enumerables que engloban cualquier problema decidible que pueda resolver una computadora moderna. 
 
-# Clase del 25 teorico
-
-tengo que repasar lo ultimo de automatas (parte 1)
-seguimos con automatas
-
-entra en coloquio jerarquia de las gramaticas
-con la gramatica tipo 3 nos sobra para ahora
-
-un automata puede ser no determinista (saber que es determinista y no determinista)
-
-el estado de un automata es como sacarle una foto al estado de la variable
-
-movimiento es cambio de estado
-
-puede salir mealy y moore en coloquio
-
-la maquina de mealy es mas expresiva (porque tiene menos estados)
-
-vamos a usar un automata finito para el tp
-
-descargar Jflap
 
 # Clase del 1 teorico
 ver redes de petri
-
-
 ## Overview
 
 La clase introdujo los fundamentos teóricos y prácticos de las Redes de Petri, utilizándolas como herramienta para modelar sistemas concurrentes, analizar cambios de estado y comprender el formalismo matemático subyacente. Se exploraron conceptos críticos de diseño de sistemas como el manejo de secciones críticas, interbloqueos (deadlocks), indeterminismo y resolución de conflictos estructurales.

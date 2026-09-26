@@ -1,0 +1,1 @@
+interleaving, estados de un hilo (de donde vienen hacia donde van), porque una maquina(turing,moore,mealy,de pila, lineal acotado y finito) es mejor que otra, monitores,synchronized,lock,con que automata se derivan formulas,modelo reactivo,como se protegen los recursos compartidos,automatas,gramatica,operaciones atomicas,tipos de lenguajes relacionados con su gramatica
