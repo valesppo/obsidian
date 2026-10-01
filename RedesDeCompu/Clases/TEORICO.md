@@ -314,64 +314,47 @@ La clase se centró en los fundamentos de la capa física de redes y el concepto
     
 - Estudiar los fundamentos teóricos del enrutamiento estático y comprender las funciones específicas de los conmutadores de capa 3.
 
+# Clase del 14
 
-# Ejercicios Cap 4
+## Creación de Subredes (Subnetting)
 
-5)
-Para esta demostracion usaremos La formula de potencias de perdida en espacio libre
-Pt/Pr  = (4pi * f * d)² / c². Donde f es la frecuencia, d la distancia entre las dos antenas y c la constante de la velocidad de la luz.
-Entonces ¿Que ocurre al duplicar la frecuencia o la distancia entre 2 antenas?
-si duplico la distancia (2d) o la frecuencia (2f), el valor interno del parentesis se duplica tambien -> (4pi * 2f * d)² = 2² (4pi * f * d)² y como 2² = 4, esto significa que la relacion entre la potencia transmitida y la recibida aumenta en un factor de 4, por lo tanto la potencia recibida se reduce a la cuarta parte de la potencia que tenias originalmente.
-Tenemos que L_dB = 10log(Pt/Pr), dado que la potencia recibida es la cuarta parte de la inicial, el cociente es 4, entonces reemplazo y queda: L_dB = 10log(4) = 6dB (aproximadamente).
+- El diseño de direccionamiento comienza tomando prestados 3 bits del cuarto octeto de la red base para generar 8 combinaciones o subredes posibles.
+    
+- Los primeros tres octetos no se modifican porque corresponden a la dirección de red.
+    
+- Al tomar 3 bits, la nueva máscara de subred pasa a ser /27, lo que equivale en formato decimal a 255.255.255.224.
+    
+- Esta segmentación genera rangos específicos para cada subred lógica: la primera va de la IP 192.168.0.0 a la 192.168.0.31, la segunda comienza en la IP .32, la tercera en la .64 y la cuarta en la .96.
+    
 
-15)
-En la Sección 4.3 se afirma que si no hay obstáculos intermedios, la trayectoria visual óptica se puede expresar como d = 3,75 h, donde d es la distancia entre la antena y el horizonte, en kilómetros, y h es la altura de la antena, en metros. Teniendo en cuenta que el radio de la Tierra es 6.370 km, obtenga la expresión anterior. Sugerencia: supóngase que la antena es perpendicular a la superficie terrestre y nótese que la recta que une el punto más alto de la antena y el horizonte es la tangente a la superficie terrestre en el horizonte. Para visuali- zar más claramente el problema, dibuje un gráfico con la antena, la trayectoria visual y elradio de la Tierra.
+## Implementación de VLANs
 
-![690](../imagenes/Pasted%20image%2020260913140220.png)
-Una vez hecho el esquma del problema nos damos cuenta que tenemos un triangulo rectangulo en donde: Cateto1: El radio de la tierra (R), Cateto2: Distancia visual que queremos calcular (d) y la Hipotenusa: Radio de la tierra mas la altura de la antena (R+h).
-Con lo cual podemos aplicar pitagoras:
-(R + h)² = R² + d²
-R² + 2Rh + h² = R² + d²
-Restando R² de ambos lados y ordenando:
-d² = 2Rh + h² 
-Como la altura h es insignificante comparada con el tamaño de la tierra, al elevar esa altura al cuadrado, da un numero tan diminuto comparado con 2Rh que se puede descartar sin perder precision. Por lo tanto:
-d² = 2Rh , d = sqrt(2Rh)
-Luego pasamos la altura a kilometros, esto es: h/1000
-d= sqrt(2 * 6.370 * h/1000) = sqrt(12,74 * h)
-d = sqrt(12,74) * sqrt(h)
-d = 3,57 * sqrt(h).
+- Para llevar la separación lógica a la práctica, se configuran VLANs en los switches.
+    
+- Se pueden organizar las conexiones asignando grupos de puertos a cada subred; por ejemplo, en un switch de 48 bocas, se asignan las bocas de la 1 a la 12 para la VLAN 1, de la 13 a la 24 para la VLAN 2, y así sucesivamente.
+    
+- Las VLANs actúan como una separación física dentro del mismo equipo, dividiendo el switch en múltiples segmentos funcionales.
+    
+- Esta configuración no solo organiza el tráfico, sino que separa los dominios de broadcast para evitar que tráfico malicioso o fallas en dispositivos saturen toda la red.
+    
 
-16 ) 
-Calcule la altura de una antena de una emisora de TV que sea capaz de alcanzar clientes
-alejados a 80 km.
-En las comunicaciones por ondas de radio y television, las microondas sufren un pandeo o refraccion por la atmosfera, por lo que la linea de vision efectiva incluye un factor de ajuste K = 4/3.
-d = 3,57 sqrt(K * h)
-sustituyendo d = 80km y K = 4/3
-80 = 3,57 sqrt(4/3 * h)
-80/3,57 = sqrt(4/3 * h)
-(22,409)² = 4/3 * h
-(22,409)²  / (4/3) = h
-h = 376,62 metros
+## Interconexión y Ruteo (Router on a Stick)
 
+- Las computadoras ubicadas en diferentes subredes lógicas (por ejemplo, una en la red .64 y otra en la .96) no pueden comunicarse directamente mediante un ping.
+    
+- Para interconectar estas subredes, se requiere de un router y de un puerto troncal en el switch configurado con el protocolo 802.1Q.
+    
+- En lugar de usar un cable por cada subred, se reserva una sola boca del router donde se configuran múltiples direcciones IP, actuando cada una como la puerta de enlace predeterminada (Gateway) para cada VLAN (típicamente se usa la primera IP útil, como .1, .33, .65 y .97).
+    
+- El router también permite aplicar Listas de Control de Acceso (ACL) para filtrar el tráfico, determinando qué equipos o subredes tienen permiso para comunicarse entre sí.
+    
 
+## Tormentas de Broadcast y Spanning Tree
 
-Branko Cap4 - 3 y 13
-Samuel Cap4 - 8 y 14
-Lautaro Cap4 - 6 y 7
-Agus Cap4 - 1 y 12
-Mauri Cap4 - 4 y 10
-Leo Cap4 - 2 y 15
-Valen Cap4 - 5 y 15
-
-hechos: 1,2,3,4,5,6,7,8,  ,10,11,12,13,14,15,  ,  ,
-
-
-
-
-Branko Cap15 - 13 y 7
-Samuel Cap15 - 2 y 8
-Lautaro Cap15 - 10 y 11
-Agus Cap15 - 4 y 3
-Mauri Cap15 - 5 y 9
-Leo Cap15 - 6 y 12
-Valen Cap15 -  1
+- En topologías corporativas o redes grandes, los switches de núcleo suelen conectarse de forma redundante para garantizar la disponibilidad.
+    
+- Las tramas de broadcast (dirigidas a la dirección MAC física de puros unos, o FF:FF:FF:FF:FF:FF) son reenviadas por los switches a todas sus bocas.
+    
+- Si existen conexiones físicas redundantes sin configuración adicional, estos reenvíos masivos generan bucles infinitos conocidos como tormentas de broadcast.
+    
+- Para solucionar este problema y mantener los cables redundantes, se utiliza el protocolo Spanning Tree (STP), el cual bloquea caminos a nivel lógico simulando que la topología no tiene redundancia activa

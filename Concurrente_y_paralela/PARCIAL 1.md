@@ -91,14 +91,14 @@ Todo paralelo es concurrente, pero no todo concurrente es paralelo.
 
 **Ejemplo (pérdida de actualización, *lost update*).** `valor = 0` y dos hilos hacen `valor++`:
 
-| Paso | Hilo 1 | Hilo 2 | `valor` en memoria |
-|---|---|---|---|
-| 1 | LOAD → r1 = 0 | | 0 |
-| 2 | | LOAD → r2 = 0 | 0 |
-| 3 | ADD → r1 = 1 | | 0 |
-| 4 | STORE valor = 1 | | 1 |
-| 5 | | ADD → r2 = 1 | 1 |
-| 6 | | STORE valor = 1 | **1** |
+| Paso | Hilo 1          | Hilo 2          | `valor` en memoria |
+| ---- | --------------- | --------------- | ------------------ |
+| 1    | LOAD → r1 = 0   |                 | 0                  |
+| 2    |                 | LOAD → r2 = 0   | 0                  |
+| 3    | ADD → r1 = 1    |                 | 0                  |
+| 4    | STORE valor = 1 |                 | 1                  |
+| 5    |                 | ADD → r2 = 1    | 1                  |
+| 6    |                 | STORE valor = 1 | **1**              |
 
 Debería ser 2. Otra corrida puede dar 2, y por eso el error es intermitente.
 

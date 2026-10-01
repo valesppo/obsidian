@@ -1,0 +1,19 @@
+{
+  "output": {
+    "style": "xml",
+    "filePath": "apuntes_completos.xml"
+  },
+  "include": [
+    "**/*.md"
+  ],
+  "ignore": {
+    "useGitignore": false,
+    "customPatterns": [
+      ".obsidian/**",
+      "**/*.pdf",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.canvas"
+    ]
+  }
+}

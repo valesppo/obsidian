@@ -802,5 +802,40 @@ Executors:
 La idea es abstraernos mas de los hilos,
 es importante finalizar los executors. Si no tiene tareas, seguira esperando el envio de nuevas.
 
+# Resumen general de la clase
+
+La clase teórica abordó la resolución de problemas de concurrencia en aplicaciones reales y la implementación de patrones de diseño para la gestión eficiente de hilos, enfocándose puntualmente en `ThreadLocal`, `ThreadFactory` y `Executors`.
+
+## Puntos clave técnicos tratados
+
+- **ThreadLocal:** Se introdujo para solucionar problemas de concurrencia donde múltiples hilos sobreescriben o comparten una misma variable estática de contexto. Al utilizar `ThreadLocal`, cada hilo en ejecución pasa a tener su propia variable independiente, aislando los datos y evitando la contaminación entre flujos.
+    
+- **Patrón Factory (ThreadFactory):** Es un patrón de diseño creacional cuya utilidad radica en centralizar la creación de una familia de objetos o clases con características similares. Este patrón abstrae al cliente de la lógica de instanciación y facilita tareas administrativas como llevar estadísticas o limitar la cantidad de objetos creados. Si se decide utilizar un Factory en un sistema, es una regla fundamental que toda la creación de esa familia de objetos pase exclusivamente por él.
+    
+- **Executors:** Proporcionan un alto nivel de abstracción que libera al desarrollador de la gestión manual de los hilos. El programador únicamente crea las tareas (`Runnable`) y se las envía al Executor, el cual se encarga de instanciar, administrar y reutilizar los hilos según la estrategia elegida (por ejemplo, mediante un pool fijo de hilos).
+    
+- **Gestión de cierre (Shutdown):** Para finalizar un Executor correctamente y liberar los recursos, es obligatorio invocar comandos de cierre. El método `shutdown()` deja de aceptar tareas nuevas y finaliza una vez que terminan las que están en ejecución, mientras que `shutdownNow()` detiene las tareas activas mediante una interrupción y devuelve las que aún no comenzaron.
+    
+- **Comportamiento de interrupción:** Se advirtió que `shutdownNow()` no garantiza un cierre inmediato si el código en ejecución captura la excepción de interrupción en un bloque `try-catch` y decide ignorarla.
+    
+
+## Ejemplos prácticos revisados en clase
+
+- **El bug de pagos cruzados:** El profesor relató un problema real donde un sistema asignaba pagos a los usuarios equivocados (por ejemplo, a un usuario le aparecía el pago de zapatillas que había realizado otro). El fallo ocurría porque la máquina virtual reutilizaba un hilo "muerto" que conservaba los datos de la variable estática del usuario anterior. Se solucionó agregando `ThreadLocal` a la variable estática y creando un proceso para limpiar el contexto al finalizar el flujo.
+    
+- **Fábrica de Facturas:** Se utilizó el patrón Factory para modelar la creación de "Factura A" y "Factura B". Ambas heredan de una clase abstracta común pero aplican distintos porcentajes de IVA (7% y 21%). El cliente simplemente pide una factura al Factory pasándole un parámetro (como "monotributista" o "común") y el patrón encapsula toda la lógica de qué objeto devolver.
+    
+- **El colapso por "Thread Leak" (Fuga de hilos):** Se detalló la optimización de un sistema que calculaba miles de combinaciones de tipos de cambio (con alertas configuradas para variaciones mayores al 5%, comunes en el peso argentino y la moneda de Nigeria). Al implementar un Executor con 100 hilos divididos en lotes, el tiempo de procesamiento se redujo drásticamente de 12 minutos a 20 segundos.
+    
+- **El error del Executor:** A pesar de la optimización del tipo de cambio, el sistema comenzó a colapsar y matar la máquina virtual cada semana. Tras investigar las métricas, el profesor descubrió que se había olvidado de invocar el método `shutdown()` al finalizar el proceso. Como la tarea corría cada 5 minutos, los hilos se acumulaban en memoria generando un gráfico en forma de "escalerita" hasta consumir todos los recursos del sistema.
+    
+
+## Preguntas y clarificaciones destacadas
+
+- ¿Por qué reutilizar hilos en lugar de crear nuevos directamente? — Porque los recursos de la máquina, como la memoria RAM, son finitos y la creación descontrolada puede causar el colapso del sistema (Leak de hilos). La máquina virtual y los Executors reutilizan los hilos para administrar mejor estos recursos y mantener el rendimiento.
+    
+- ¿Se justificaría tener más de un Factory para hilos si hacen tareas distintas? — El profesor Francisco aclaró que las responsabilidades del Factory se separan por la "familia" del objeto (hilos, en este caso), por lo que se debería tener un solo ThreadFactory central. La diferenciación por tipo de tarea puede gestionarse internamente dentro de esa misma fábrica, sin necesidad de crear múltiples Factories.
+
+
 
 
