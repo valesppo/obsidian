@@ -1,9 +1,3 @@
-Leer stallings william
-
-**lunes que viene toma un preguntero sobre la lectura**
-
-tenemos trabajos practicos en el practico tambien
-
 
 ![638](../imagenes/Pasted%20image%2020260804142827.png)
 

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RedesDeCompu/Clases/TEORICO.md",
+                "file": "Concurrente_y_paralela/CLASES/TP1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "TEORICO"
+              "title": "TP1"
             }
           }
         ]
@@ -98,8 +98,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 274.5,
-    "collapsed": true
+    "width": 274.5
   },
   "right": {
     "id": "90df51e5b0f088fb",
@@ -218,11 +217,12 @@
   },
   "active": "2789e6ac03b85ecd",
   "lastOpenFiles": [
-    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
-    "RedesDeCompu/Clases/TEORICO.md",
-    "RedesDeCompu/Clases/PRACTICO.md",
-    "Concurrente_y_paralela/CLASES/PRACTICO.md",
     "Concurrente_y_paralela/CLASES/TEORICO.md",
+    "Concurrente_y_paralela/CLASES/TP1.md",
+    "Concurrente_y_paralela/CLASES/PRACTICO.md",
+    "RedesDeCompu/Clases/TEORICO.md",
+    "libros/1 Stallings - Comunicaciones y Redes de Computadores 7ed.pdf",
+    "RedesDeCompu/Clases/PRACTICO.md",
     "Concurrente_y_paralela/PARCIAL 1.md",
     "RedesDeCompu/Clases/TP-4.md",
     "RedesDeCompu/imagenes/Pasted image 20260925002933.png",
