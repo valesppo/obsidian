@@ -358,3 +358,136 @@ La clase se centró en los fundamentos de la capa física de redes y el concepto
 - Si existen conexiones físicas redundantes sin configuración adicional, estos reenvíos masivos generan bucles infinitos conocidos como tormentas de broadcast.
     
 - Para solucionar este problema y mantener los cables redundantes, se utiliza el protocolo Spanning Tree (STP), el cual bloquea caminos a nivel lógico simulando que la topología no tiene redundancia activa
+
+
+---
+
+# Clase del 28
+
+1. Direccionamiento IP: IPv4, IPv6, VLSM y CIDR
+
+**IPv4 (Internet Protocol versión 4)**
+
+- **Estructura:** Las direcciones IPv4 tienen una longitud fija de 32 bits y se dividen conceptualmente en un par de campos: identificador de red (_netid_) e identificador de computador (_hostid_). En la práctica se representan mediante notación decimal punteada (cuatro enteros entre 0 y 255 separados por puntos).
+- **Esquema por Clases (***Classful****): El diseño original dividía el espacio en clases autodefinidas según sus bits de orden superior:
+    - **Clase A:** Prefijo de 8 bits (bit inicial `0`), reservando 24 bits para _hostid_ (redes muy grandes).
+    - **Clase B:** Prefijo de 16 bits (bits iniciales `10`), reservando 16 bits para _hostid_ (redes medianas).
+    - **Clase C:** Prefijo de 24 bits (bits iniciales `110`), reservando 8 bits para _hostid_ (redes pequeñas).
+    - **Clase D y E:** La Clase D se reserva para tráfico de multidifusión (_multicast_, bits `1110`) y la Clase E para uso futuro.
+- **Rangos Privados:** Se reservan bloques de direcciones no enrutables en Internet para intranets privadas: `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16` y `169.254.0.0/16` (esta última usada para autoconfiguración de enlace local).
+
+**IPv6 (Internet Protocol versión 6)**
+
+- **Estructura y Formato:** Amplía la longitud de las direcciones a **128 bits** (16 octetos) para resolver el agotamiento del espacio IPv47. Se escriben en notación hexadecimal separada por dos puntos (_colon hex_) dividida en 8 bloques de 16 bits, permitiendo compresión de ceros consecutivos (`::`)8.
+- **Estructura de la Dirección Unicast:** Se divide jerárquicamente en un **prefijo de enrutamiento global** (_Global Routing Prefix_ de $N$ bits), un **identificador de subred** (_Subnet ID_ de $64-N$ bits) y un **identificador de interfaz** (_Interface ID_ fijo de 64 bits)9.
+- **Tipos de Direcciones:**
+    - **Unicast Global:** Direcciones públicas enrutables internacionalmente1011.
+    - **Link-Local Unicast:** Con prefijo `1111 1110 10` (`fe80::/10`), válidas únicamente dentro de una misma red o enlace físico1112.
+    - **Multicast:** Con prefijo `1111 1111` (`ff00::/8`), sustituyen por completo el uso de difusión (_broadcast_) en IPv61113.
+
+**VLSM (Variable-Length Subnet Mask / Máscaras de Subred de Longitud Variable)**
+
+- **Mecanismo:** Evolución del _subnetting_ de longitud fija donde una organización asigna máscaras de subred con tamaños personalizados de forma independiente para cada red física.
+- **Propósito:** Permite adaptar la cantidad de direcciones IP asignadas a las necesidades reales de cada segmento (evitando desperdiciar direcciones en enlaces punto a punto o subredes pequeñas). Exige que todas las máquinas y routers del segmento respeten la división para evitar ambigüedades en la interpretación de los bits de red y de host.
+
+**CIDR (Classless Inter-Domain Routing / Enrutamiento Interdominio Sin Clases)**
+
+- **Mecanismo:** Elimina la rigidez de las clases A, B y C permitiendo que la frontera entre el prefijo de red y el sufijo de host ocurra en cualquier posición arbitraria de bit. Se expresa en **notación de barra (****slash notation****)**, donde la barra indica el número de bits en `1` de la máscara de red (por ejemplo, `/21` o `/24`).
+- **Agregación de Rutas (****Supernetting****):** Permite a los Proveedores de Servicios de Internet (ISPs) recibir bloques contiguos grandes de direcciones y subdividirlos de manera jerárquica para sus clientes en potencias de 2, reduciendo drásticamente la cantidad de entradas en las tablas de enrutamiento globales de Internet.
+
+---
+
+2. Protocolos ICMP, ARP y BOOTP / DHCP
+
+**ICMP (Internet Control Message Protocol)**
+
+- **Propósito:** Protocolo obligatorio de la capa IP que permite a los routers y hosts enviar mensajes de control y reportar errores sobre datagramas problemáticos hacia la fuente original. Operativamente, viaja encapsulado dentro de la carga útil de un datagrama IP.
+- **Formato General:** Comienza con tres campos fijos: **Tipo** (8 bits), **Código** (8 bits) y **Checksum** (16 bits), seguidos del cuerpo del mensaje.
+- **Tipos de Mensajes Principales:**
+    - **Echo Request / Echo Reply (Tipos 8/0 en IPv4; 128/129 en IPv6):** Utilizados por la herramienta _ping_ para verificar alcanzabilidad y estado de la red.
+    - **Destination Unreachable (Tipo 3 en IPv4; Tipo 1 en IPv6):** Informan que un paquete no pudo ser entregado por falta de ruta, puerto inaccesible o prohibición administrativa.
+    - **Time Exceeded (Tipo 11 en IPv4; Tipo 3 en IPv6):** Notifican que el campo TTL o Hop Limit llegó a 0, o que venció el temporizador de reensamblado de fragmentos.
+    - **Redirect (Tipo 5 en IPv4; Tipo 137 en ICMPv6):** Un router solicita a un host que actualice su tabla para usar un primer salto más óptimo.
+    - **Packet Too Big (ICMPv6 Tipo 2):** Esencial en IPv6 para el mecanismo _Path MTU Discovery_ (PMTUD), avisando al emisor que debe reducir el tamaño del datagrama antes de retransmitir.
+
+**ARP (Address Resolution Protocol)**
+
+- **Propósito:** Resuelve dinámicamente la dirección física de hardware (dirección MAC) de un equipo destino en la misma red local a partir de su dirección lógica IPv4.
+- **Proceso de Operación:**
+    1. Cuando un host emisor necesita enviar un paquete y no conoce la MAC del receptor, emite una solicitud **ARP Request** por difusión (_broadcast_, tipo de trama Ethernet `0x0806`) con el campo de MAC destino a cero.
+    2. El destino identificado reconoce su IP y responde directamente mediante un **ARP Reply** por unidifusión (_unicast_) informando su dirección física.
+- **Caché y Refinamientos:** Para evitar la sobrecarga de broadcasts recurrentes, las asociaciones IP-MAC se almacenan en una **Caché ARP** temporal. Se incluye el _Gratuitous ARP_ (petición enviada por un equipo a su propia IP al iniciar) para detectar direcciones IP duplicadas e informar cambios de tarjeta de red.
+- **Proxy ARP:** Permite a un router o proxy responder a peticiones ARP en nombre de otro equipo ubicado en un segmento diferente.
+- **RARP (Reverse ARP):** Protocolo histórico (tipo Ethernet `0x8035`) que permitía a equipos sin disco solicitar su IP transmitiendo su dirección MAC.
+- _Nota IPv6:_ IPv6 prescinde de ARP y lo reemplaza por el protocolo **NDP (Neighbor Discovery Protocol)** integrado dentro de ICMPv6
+
+**BOOTP y DHCP**
+
+- **BOOTP (Bootstrap Protocol):** Protocolo UDP estandarizado para permitir que equipos o clientes sin disco obtengan automáticamente su configuración IP y la ubicación de su archivo de arranque al iniciar la red.
+- **DHCP (Dynamic Host Configuration Protocol):** Evolución compatible de BOOTP que amplía el campo de opciones para ofrecer la configuración completa de red en un solo intercambio. Permite la asignación **dinámica, automática o estática** de direcciones IP, además de entregar la máscara de subred, router por defecto y servidores DNS.
+
+---
+
+3. Encaminamiento Interno y Externo: RIP, EIGRP, OSPF y BGP
+
+**Arquitectura General de Encaminamiento**
+
+Las redes interconectadas se dividen jerárquicamente en **Sistemas Autónomos (AS)**. Un AS es un conjunto de redes y routers bajo una única autoridad administrativa que mantienen consistencia en sus políticas internas.
+
+- **IGP (Interior Gateway Protocol):** Protocolos utilizados para intercambiar información de rutas **dentro** de un mismo AS.
+- **EGP (Exterior Gateway Protocol):** Protocolos diseñados para comunicar alcanzabilidad entre **diferentes** Sistemas Autónomos.
+
+**RIP (Routing Information Protocol) y RIPng**
+
+- **Categoría y Algoritmo:** IGP basado en **Vector Distancia (Bellman-Ford)**.
+- **Métrica y Operación:** Utiliza exclusivamente el **conteo de saltos** (_hop count_), donde la distancia máxima es 15 saltos y un valor de **16 representa infinito/inalcanzable**. Cada router transmite periódicamente su tabla de rutas completa a sus vecinos cada 30 segundos
+- **Mecanismos de Prevención de Bucles:** Ante fallos de enlace, RIP padece el problema de "conteo al infinito" y lenta convergencia. Para mitigar esto aplica:
+    - _Split Horizon:_ Prohíbe anunciar una ruta de vuelta por la misma interfaz por donde se aprendió.
+    - _Poison Reverse:_ Anuncia una métrica de 16 por la misma interfaz al detectar una falla.
+    - _Triggered Updates:_ Genera avisos inmediatos al ocurrir un cambio topológico.
+- **Versiones:** **RIPv2** (para IPv4) añade soporte para subredes, máscaras y etiquetas de ruta (_route tags_); **RIPng** adapta la sintaxis para IPv6 sobre transporte UDP.
+
+**EIGRP (Enhanced Interior Gateway Routing Protocol)**
+
+- **Categoría:** IGP de Vector Distancia mejorado (_Advanced Distance Vector_)76.
+- **Operación:** Optimiza el ancho de banda y la velocidad de convergencia evitando actualizaciones periódicas masivas y empleando direcciones de multidifusión reservadas (como `FF02::A` en IPv6) para comunicarse activamente solo cuando ocurren cambios topológicos76.
+
+**OSPF (Open Shortest Path First) - OSPFv2 y OSPFv3**
+
+- **Categoría y Algoritmo:** IGP de **Estado de Enlace (SPF)** basado en el **algoritmo de Dijkstra**77more_horiz.
+- **Operación y Topología:** Cada router difunde anuncios de estado de enlace (_LSAs_) a todos los routers del área77more_horiz. Cada nodo construye de forma independiente un mapa topológico completo y calcula los caminos de coste mínimo77more_horiz.
+- **Subdivisión en Áreas:** Permite organizar un AS en **áreas** jerárquicas interconectadas por un área troncal (_Backbone Area 0_) para restringir la propagación de LSAs y reducir el cómputo de los routers82.
+- **Mensajes Principales (directamente sobre IP con protocolo 89):**83
+    1. _Hello:_ Descubre vecinos y elige el Router Designado (DR) y el Backup (BDR) en medios compartidos84.
+    2. _Database Description (DD):_ Describe el contenido de la base de datos de topología85.
+    3. _Link-Status Request:_ Solicita información detallada de enlaces específicos86.
+    4. _Link-Status Update:_ Transporta anuncios de enlaces (_LSAs_)81.
+    5. _Link-Status Ack:_ Confirma la recepción correcta de LSAs81.
+- **OSPFv3:** Versión adaptada para IPv6 que independiza el funcionamiento del protocolo de las direcciones IP ejecutándolo por enlace, utilizando un _Router ID_ arbitrario de 32 bits e integrando autenticación mediante cabeceras IPsec87.
+
+**BGP (Border Gateway Protocol / BGP-4)**
+
+- **Categoría y Algoritmo:** EGP estándar global basado en el algoritmo de **Vector Camino (****Path Vector****)** que funciona sobre sesiones TCP confiables6488.
+- **Operación:** Diseñado para intercambiar información de alcanzabilidad entre Sistemas Autónomos64. Evita bucles de enrutamiento inspeccionando el listado explícito de AS contenidos en el atributo `AS_PATH`8889.
+- **Mensajes BGP:** `OPEN` (inicia la sesión TCP), `UPDATE` (anuncia o retira rutas), `NOTIFICATION` (informa errores y cierra la sesión) y `KEEPALIVE` (mantiene la sesión activa)90.
+- **Atributos de Camino (****Path Attributes****):** Incluyen `ORIGIN`, `AS_PATH` (secuencia de AS atravesados), `NEXT_HOP` (dirección IP del siguiente salto), `MED` (_Multi-Exit Discriminator_) y `LOCAL_PREF`8991.
+- **Políticas Económicas:** A diferencia de los IGPs, las decisiones de selección de ruta en BGP **no buscan el camino físicamente más corto**, sino que están reguladas por políticas administrativas y **acuerdos económicos/comerciales** entre proveedores de Internet9293.
+
+---
+
+4. Routers y Enrutamiento entre VLANs
+
+**Funcionamiento de Routers (Encaminadores)**
+
+- **Capa de Operación:** Operan en la **Capa 3 (Red)** del modelo de protocolos, interconectando redes físicas y lógicas heterogéneas94more_horiz.
+- **Decisión de Reenvío:** Al recibir un paquete IP, el router descarta la cabecera de enlace de datos, examina la dirección IP de destino y consulta su **Base de Información de Reenvío (FIB / Tabla de Enrutamiento)** para determinar la interfaz de salida y la dirección del siguiente salto (_next-hop_)96more_horiz.
+
+**Concepto de VLAN (Virtual Local Area Network)**
+
+- **Dominio de Difusión:** Una VLAN es una configuración lógica dentro de un conmutador de Capa 2 que segmenta un switch físico en múltiples redes virtuales independientes, restringiendo las tramas MAC de difusión (_broadcast_) estrictamente a los equipos de esa VLAN99more_horiz.
+- **Perspectiva de los Protocolos IP:** Para los protocolos de nivel de red como IP, **una VLAN se trata exactamente igual que una red física independiente**102.
+
+**Enrutamiento entre VLANs (Inter-VLAN Routing)**
+
+- **Necesidad:** Debido a que cada VLAN constituye un dominio de difusión e IP aislado, los equipos pertenecientes a una VLAN no pueden comunicarse directamente a Nivel 2 con equipos de otra VLAN99more_horiz.
+- **Operación del Enrutamiento:** Para transferir tráfico entre diferentes VLANs es **estrictamente necesaria la intervención de un router de Capa 3** (o un switch L3 con funciones de enrutamiento IP)94more_horiz. El router recibe el paquete etiquetado en la VLAN origen, procesa la cabecera IP de Capa 3, toma la decisión de enrutamiento correspondiente y reenvía el paquete hacia la subred/VLAN de destino
