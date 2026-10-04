@@ -154,3 +154,109 @@
    - integrantes.json: Completar con los datos de tu grupo y repositorio.
    - docs/: Agregar los diagramas (diagrama-clases.png, diagrama-secuencia.png) y el informe final en PDF (informe.pdf).
    - resultados/: Donde se generarán eventos.csv, elementos.csv y resumen.properties tras la ejecución.
+
+
+A continuación te explico de qué se trata, cómo está compuesto el problema y
+  un plan paso a paso para encararlo ordenadamente.
+
+  ---
+
+  1. ¿De qué se trata el TP? (La idea central)
+
+  Imaginate una fábrica de piezas 3D. Entran N órdenes (desde 1 hasta
+  totalOrders) y deben atravesar un circuito de 4 etapas que se ejecutan
+  simultáneamente en paralelo con varios hilos:
+
+   2. Etapa 1: Asignación (3 hilos):
+      - Toma una orden nueva (CREATED).
+      - Busca una impresora libre en la matriz y la reserva (AVAILABLE →
+        RESERVED).
+      - Pasa la orden a WAITING_VALIDATION.
+   3. Etapa 2: Validación (2 hilos):
+      - Toma la orden y llama a OutcomeDecider.isModelValid(...).
+      - Si es válido → pasa a READY_TO_PRINT (la impresora sigue ocupada).
+      - Si es inválido → pasa a REJECTED y libera la impresora (RESERVED →
+        AVAILABLE). Termina la orden.
+   4. Etapa 3: Impresión (3 hilos):
+      - Toma la orden y llama a OutcomeDecider.isPrintSuccessful(...).
+      - Si es exitoso → pasa a PRINTED y libera la impresora (AVAILABLE).
+      - Si falla → pasa a PRINT_FAILED y la impresora queda rota
+        (OUT_OF_SERVICE). Termina la orden.
+   5. Etapa 4: Control de Calidad (2 hilos):
+      - Toma la orden en PRINTED y llama a
+  Al final, todas las órdenes llegan a un estado final (APPROVED, REJECTED,
+  PRINT_FAILED, DEFECTIVE), todos los hilos mueren prolijamente sin
+  Thread.stop() y se generan 3 archivos de resultados (eventos.csv,
+  elementos.csv, resumen.properties).
+
+  ---
+
+  6. Restricción clave que no podés ignorar
+  La cátedra prohíbe usar las utilidades automáticas de Java como BlockingQueue,
+  AtomicInteger, Condition o colecciones concurrentes (lo verifica el test
+  SourceRestrictionsTest.java).
+  Debés sincronizar usando primitivas clásicas:
+   - synchronized, wait(), notifyAll().
+   - O ReentrantLock / Semaphore.
+   - Hilos estándar (Thread o ExecutorService básico).
+
+  ---
+
+  3. Plan de acción paso a paso (Roadmap)
+
+  Para no volverte loco, conviene atacarlo en este orden:
+
+  Paso 1: Modelar el Dominio interno (sin concurrencia compleja)
+  Crear dentro de un paquete propio (por ejemplo
+  ar.edu.unc.fcefyn.pcp.tp1.solution.domain):
+   - Order: representa la orden con su id, state actual, impresora asignada y
+     contadores de auditoría.
+   - Printer: representa una impresora con su id (formato "P-fila-columna"),
+     estado (AVAILABLE, RESERVED, OUT_OF_SERVICE) y contador de usos.
+   - PrinterPool (o matriz de impresoras): estructura protegida que permite a
+     los hilos de asignación solicitar una impresora disponible (wait si no hay,
+     o tomarla sincronizadamente) y a las etapas 2 y 3 devolverla o darla de
+     baja.
+
+  Paso 2: Crear el Buffer / Cola Sincronizada
+  Entre cada etapa necesitás pasar órdenes de un hilo a otro.
+   - Dado que no podés usar BlockingQueue, vas a crear tu propia cola
+     sincronizada (ej. BlockingBuffer<T>) basada en una lista común (LinkedList
+     / ArrayDeque) protegida por un monitor (synchronized, wait(), notifyAll()).
+
+  Paso 3: Implementar los Workers (Hilos) de cada Etapa
+  Crear los Runnable para cada fase:
+   - AssignmentWorker: extrae de la cola de creadas, pide impresora, encola en
+     validación.
+   - ValidationWorker: toma de validación, decide, y encola en impresión o
+     descarta.
+   - PrintingWorker: toma de impresión, imprime, libera/rompe impresora, encola
+     en calidad o termina.
+   - QualityControlWorker: audita y pasa a final.
+  (Cada worker debe aplicar Thread.sleep(delay) según la configuración cuando
+  procesa una orden).
+
+  Paso 4: Mecanismo de Terminación Limpia
+  Los hilos deben saber cuándo dejar de esperar órdenes y terminar su run(). Una
+  técnica estándar y limpia en PCP es:
+   - Poison Pill (o centinela): un objeto especial que avisa "se acabaron las
+     órdenes".
+   - O un contador compartido / banderas de finalización con notifyAll().
+
+  Paso 5: Logger de Eventos y Métricas
+  Un registrador thread-safe (puede ser un monitor que escriba en memoria o en
+  archivo sincronizado) que guarde cada transición para generar:
+   - eventos.csv (con la secuencia global ordenada 1, 2, 3...).
+   - elementos.csv (resumen por cada orden ordenada por id).
+   - resumen.properties.
+
+  Paso 6: Conectar todo en ConcurrentSimulation.java y probar
+  En ConcurrentSimulation.execute(config):
+   1. Instanciar impresoras, buffers, logger.
+   2. Iniciar todos los hilos (thread.start()).
+   3. Cargar las órdenes iniciales.
+   4. Esperar que todos los hilos terminen (thread.join()).
+   5. Escribir los archivos CSV/properties.
+   6. Devolver el SimulationResult.
+   7. Ejecutar mvn test para ver cómo pasan los tests públicos provistos por la
+      cátedra.
